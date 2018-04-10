@@ -478,6 +478,17 @@ router.get(/telephone-c-handler/, function (req, res) {
       }
     });
 
+        // hospital
+    router.get(/invalid-handler/, function (req, res) {
+      if (req.query.invalid === 'yes') {
+        res.redirect('you-live');
+      } else {
+        res.redirect('you-live');
+      }
+    });
+
+
+
 
     // home-handler
     router.get(/home-handler/, function (req, res) {
@@ -493,7 +504,7 @@ router.get(/telephone-c-handler/, function (req, res) {
       } else if (req.query.home === 'care') {
         res.redirect('../preapp/sc/authority-assessed');
       } else if (req.query.home === 'homeless') {
-        res.redirect('live-ko');
+        res.redirect('living-summary');
       } else {
         res.redirect('live-ko');
       }
