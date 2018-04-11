@@ -955,6 +955,15 @@ var benType;
       }
     });
 
+                                  // sicknotes
+            router.get(/sicknote-handler/, function (req, res) {
+      if (req.query.sicknote === 'yes') {
+        res.redirect('sick-note-date');
+      } else {
+        res.redirect('sick-note-stopped');
+      }
+    });
+
             
 // pip
 
