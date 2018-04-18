@@ -1,0 +1,65 @@
+{% extends "layout_bsa.html" %}
+
+{% block page_title %}
+  Help paying for NHS Costs prototype
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+      <a href="javascript:history.go(-1)" class="link-back">Back</a>
+
+                      <header class="page-header">
+                <p class="page-header--sub heading-secondary"><span class="visuallyhidden">This section is </span>Your income and regular money</p>
+                 {% if thirdparty %}
+                <h1 class="page-header--lede heading-large">What is {{firstname}}'s date of birth?</h1>
+                {% else %}
+                <h1 class="page-header--lede heading-large">Have you been sending fit notes to a Jobcentre or the DWP for more than a year?</h1>
+                 {% endif %}
+            </header>
+
+
+
+  <form action="fitnote-handler" method="get" class="form">
+
+       <div class="form-group">
+          
+          <fieldset class="inline">
+            <legend class="visually-hidden">
+              When did you start sending fit notes to a Jobcentre or the Department for Work and Pensions?
+            </legend>
+
+            <div class="multiple-choice">
+              <input id="yes" type="radio" name="fitnote" value="yes">
+              <label for="yes">Yes</label>
+            </div>
+
+            <div class="multiple-choice">
+              <input id="no" type="radio" name="fitnote" value="no">
+              <label for="no">No</label>
+            </div>
+            
+          </fieldset>  
+          
+        </div>
+        
+          <div class="form-group">
+            <input class="button" type="submit"  value="Next">
+          </div>
+
+      </form>
+    </div>
+    </div>
+</main>
+
+{% endblock %}
+
+
+
+
+
+
+
