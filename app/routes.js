@@ -976,8 +976,15 @@ var benType;
       }
     });
 
+                  // alevel or higher
+      router.get(/alevel-handler/, function (req, res) {
+      if (req.query.alevel === 'yes') {
+        res.redirect('final-year');
+            } else {
+                res.redirect('../declaration_r1');
+      }
+    });
             
-
 
 // add your routes here
 
