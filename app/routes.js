@@ -1019,6 +1019,20 @@ var benType;
       }
     });
 
+
+    // no income
+      router.get(/incometype-handler/, function (req, res) {
+      if (req.query.incometype == 'pension-income') {
+        res.redirect('../pension/pension_statepension');
+            } else if (req.query.incometype == 'no-income') {
+              res.redirect('what-money');
+            } else if (req.query.incometype == 'benefits-income') {
+              res.redirect('../benefits/accordian-hmrc');
+            } else {
+              res.redirect('test4');
+      }
+    });
+
 // add your routes here
 
 //import the person constructor
