@@ -333,6 +333,10 @@ dialog[open]::backdrop {
     line-height: 1.3157894737;
   }
 }
+
+.form-control {
+    width: 90%;
+  }
 </style>
 
 
@@ -343,7 +347,7 @@ dialog[open]::backdrop {
       <form action="councilcare-handler" method="get" class="form">
 
                                        <header class="page-header">
-            <p class="page-header--sub heading-secondary"><span class="visuallyhidden">This section is </span>Your income and regular money</p>
+            <p class="page-header--sub heading-secondary"><span class="visuallyhidden">This section is </span>Education and training</p>
              {% if thirdparty %}
             <h1 class="page-header--lede heading-large">How much is {firstname}'s {Scottish Widows} pension {every month}?</h1>
             {% else %}
@@ -356,27 +360,117 @@ dialog[open]::backdrop {
         <div>
           <select id="council" class="typeahead js-hidden" name="council" aria-required="true">
           <option value=""></option>
-          <option value="Newport City Council">Newport City Council</option>
-          <option value="North Ayrshire Council">North Ayrshire Council</option>
-          <option value="North Down Borough Council">North Down Borough Council</option>
-          <option value="Omagh District Council">Omagh District Council</option>
-          <option value="Orkney Islands Council">Orkney Islands Council</option>
-          <option value="Pembrokeshire County Council">Pembrokeshire County Council</option>
-          <option value="Perth and Kinross Council">Perth and Kinross Council</option>
-          <option value="Powys County Council">Powys County Council</option>
-          <option value="Renfrewshire Council">Renfrewshire Council</option>
-          <option value="Rhondda Cynon Taff County Borough Council">Rhondda Cynon Taff County Borough Council</option>
-          <option value="Swansea City and Borough Council">Swansea City and Borough Council</option>
-          <option value="Newtownabbey Borough Council">Newtownabbey Borough Council</option>
-          <option value="Newry and Mourne District Council">Newry and Mourne District Council</option>
-          <option value="Food Standards Agency Northern Ireland">Food Standards Agency Northern Ireland</option>
+          <option value="School of Advanced Study, Institute of Advanced Legal Studies">School of Advanced Study, Institute of Advanced Legal Studies</option>
+          <option value="School of Advanced Study, Institute of Commonwealth Studies ">School of Advanced Study, Institute of Commonwealth Studies </option>
+          <option value="School of Advanced Study, Institute of English Studies">School of Advanced Study, Institute of English Studies</option>
+          <option value="School of Advanced Study, Institute of Modern Languages Research">School of Advanced Study, Institute of Modern Languages Research</option>
+          <option value="School of Advanced Study, Institute of Historical Research">School of Advanced Study, Institute of Historical Research</option>
+          <option value="School of Advanced Study, Warburg Institute">School of Advanced Study, Warburg Institute</option>
+          <option value="Birkbeck, University of London (BBK)">Birkbeck, University of London (BBK)</option>
+          <option value="British College of Osteopathic Medicine">British College of Osteopathic Medicine</option>
+          <option value="Brunel University">Brunel University</option>
+          <option value="Camberwell College, University of the Arts London">Camberwell College, University of the Arts London</option>
+          <option value="Central Saint Martins, University of the Arts London">Central Saint Martins, University of the Arts London</option>
+          <option value="Chelsea College of Art and Design, University of the Arts London">Chelsea College of Art and Design, University of the Arts London</option>
+          <option value="City University London">City University London</option>
+          <option value="The Courtauld Institute of Art, University of London">The Courtauld Institute of Art, University of London</option>
+          <option value="University of East London">University of East London</option>
+
+
+
+
+
+
+
+
+<!-- D&B Academy of Performing Arts
+
+Eastman Dental Institute, UCL
+
+University of Essex, East 15 Loughton campus
+
+European School of Economics (London)
+
+Goldsmiths, University of London
+
+University of Greenwich
+
+Greenwich School of Management
+
+University of Hertfordshire, Watford Campus
+
+Heythrop College, University of London (HEY)
+
+Imperial College London
+
+Imperial College Business School
+
+King's College London (KCL)
+
+Kingston University London
+
+London Business School (LBS)
+
+London College of Communication, University of the Arts
+
+London College of Fashion, University of the Arts London
+
+University College London
+
+University College London School of Pharmacy
+
+London Metropolitan University
+
+London School of Business and Finance
+
+London School of Hygiene & Tropical Medicine (LSHTM)
+
+London School of Economics and Politcal Science (LSE)
+
+London South Bank University
+
+Middlesex University
+
+Queen Mary, University of London (QMUL)
+
+University of Roehampton, London
+
+Regent's University London
+
+Royal Academy of Music (RAM)
+
+Royal College of Art
+
+Royal College of Music
+
+Royal Central School of Speech and Drama (RCSSD)
+
+Royal Holloway, University of London (RHUL)
+
+Royal Veterinary College, University of London (RVC)
+
+School of Oriental & African Studies, University of London (SOAS)
+
+School of Pharmacy
+
+Slade School of Fine Art, UCL
+
+St George's Medical School, University of London (SGUL)
+
+St Mary's University, Twickenham
+
+University of Westminster
+
+University of West London
+
+Wimbledon College of Arts, University of the Arts London -->
           </select>
         </div>
       </div>
       <br>
-          <div class="form-group">
-            <input class="button" type="submit"  value="Next">
-          </div>
+        <p>
+          <a class="button" href="loan-type" id="next">Next</a>
+        </p>
 
 </form>
     </div>
@@ -401,3 +495,8 @@ dialog[open]::backdrop {
 
 
 {% endblock %}
+
+
+
+
+

@@ -16,7 +16,7 @@
                    <header class="page-header">
             <p class="page-header--sub heading-secondary"><span class="visuallyhidden">This section is </span>Education and training</p>
   
-            <h1 class="page-header--lede heading-large">Are you in the final or only year of your course?</h1>
+            <h1 class="page-header--lede heading-large">Where do you live when you're studying?</h1>
             </header>
 
 <br>
@@ -32,32 +32,36 @@
 
 <!-- <p><a href="https://www.gov.uk/what-different-qualification-levels-mean/list-of-qualification-levels">Courses higher than A level qualifications</a> (opens in new window)</p> -->
 
-<form action="finalyear-handler" method="get" class="form">
+<form action="wholoan-handler" method="get" class="form">
 
        <div class="form-group">
           
-          <fieldset class="inline">
+          <fieldset class="">
             <legend class="visually-hidden">
               Do you live with a partner?
             </legend>
 
             <div class="multiple-choice">
-              <input id="yes" type="radio" name="finalyear" value="yes">
-              <label for="yes">Yes</label>
+              <input id="eng" type="radio" name="wholoan" value="eng">
+              <label for="eng">In your parents or guardians home</label>
             </div>
 
             <div class="multiple-choice">
-              <input id="no" type="radio" name="finalyear" value="no">
-              <label for="no">No</label>
+              <input id="wales" type="radio" name="wholoan" value="wales">
+              <label for="wales">In my own accomodation, in London</label>
+            </div>
+
+                        <div class="multiple-choice">
+              <input id="scot" type="radio" name="wholoan" value="scot">
+              <label for="scot">In my own accomodation, outside of London</label>
             </div>
             
           </fieldset>  
           
         </div>
-        
-        <p>
-          <a class="button" href="uni-autocomplete" id="next">Next</a>
-        </p>
+          <div class="form-group">
+            <input class="button" type="submit"  value="Next">
+          </div>
 
       </form>
     </div>

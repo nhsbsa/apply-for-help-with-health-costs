@@ -478,16 +478,25 @@ router.get(/telephone-c-handler/, function (req, res) {
       }
     });
 
+
         // hospital
     router.get(/invalid-handler/, function (req, res) {
       if (req.query.invalid === 'yes') {
-        res.redirect('you-live');
+        res.redirect('live_hospital-2');
       } else {
         res.redirect('you-live');
       }
     });
 
 
+        // hospital step 2
+    router.get(/overyear-handler/, function (req, res) {
+      if (req.query.invalid === 'yes') {
+        res.redirect('you-live');
+      } else {
+        res.redirect('you-live');
+      }
+    });
 
 
     // home-handler
@@ -981,10 +990,34 @@ var benType;
       if (req.query.alevel === 'yes') {
         res.redirect('final-year');
             } else {
-                res.redirect('../declaration_r1');
+                res.redirect('/apply/design-sprints/sprint21/check-list_income-new-2');
       }
     });
-            
+
+
+                        // loan
+      router.get(/educationloan-handler/, function (req, res) {
+      if (req.query.loantype == 'loanhelp') {
+        res.redirect('test1');
+            } else if (req.query.loantype == 'nhshelp') {
+              res.redirect('test2');
+            } else if (req.query.loantype == 'hardshiphelp') {
+              res.redirect('test3');
+            } else {
+              res.redirect('test4');
+      }
+    });
+
+
+
+                              // alevel or higher
+      router.get(/wholoan-handler/, function (req, res) {
+      if (req.query.wholoan == 'scot') {
+        res.redirect('test3');
+            } else {
+              res.redirect('loan-eng-amount');
+      }
+    });
 
 // add your routes here
 

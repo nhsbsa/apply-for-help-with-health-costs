@@ -1,0 +1,114 @@
+ {% extends "layout_bsa.html" %}
+
+{% block page_title %}
+  Help paying for NHS Costs prototype
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+  <a href="javascript:history.go(-1)" class="link-back">Back</a>
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+
+          <header class="page-header">
+            <p class="page-header--sub heading-secondary"><span class="visuallyhidden">This section is </span> Education and training</p>
+  
+            <h1 class="page-header--lede heading-large">Do you get any of these types of financial help to study?</h1>
+            </header>
+
+      
+      <form class="form" action="educationloan-handler" id="contact-boxes">
+
+  <fieldset>
+
+    <legend class="visually-hidden">What type of waste do you transport regularly?</legend>
+
+    <div class="multiple-choice multiple-radio">
+      <input id="loan" name="loantype" type="checkbox" value="loanhelp">
+      <label for="loan" style="font-weight:bold">
+        Student finance loan or maintenance grant
+        <span class="form-hint" style="color:black">
+            Support provided by Student Finance England, Student Finance Wales or the Student Awards Agency for Scotland.
+        </span>
+      </label>
+    </div>
+                    <div class="multiple-choice multiple-radio">
+      <input id="bursary" name="loantype" type="checkbox" value="nhshelp">
+      <label for="bursary" style="font-weight:bold">
+        NHS bursary
+        <span class="form-hint" style="color:black">
+            This is usually given to students on medical and dental courses.
+        </span>
+      </label>
+    </div>
+
+<div class="multiple-choice multiple-radio">
+      <input id="scholarship" name="loantype" type="checkbox" value="hardshiphelp">
+      <label for="scholarship" style="font-weight:bold">
+      <div style="line-height: 135%; padding-top: 0.3em">Money directly from your school, university or college on top of any other student finance</div>
+        <span class="form-hint" style="color:black; padding-top:0.4em">
+            This could be in the form of a one off payment, bursary or an award. This can also be <a href="https://www.gov.uk/extra-money-pay-university/university-and-college-hardship-funds">university and college hardship funds.</a>
+        </span>
+      </label>
+    </div>
+
+    <div class="multiple-choice multiple-radio">
+      <input id="scholarship" name="loantype" type="checkbox" value="bursaryhelp">
+      <label for="scholarship" style="font-weight:bold">
+        Other bursaries, scholarships, sponsorship and awards
+        <span class="form-hint" style="color:black">
+            This could be things like money from an employer, teacher training or scholarships offered for academic or sporting excellence.</a>
+        </span>
+      </label>
+    </div>
+
+<!--         <div class="multiple-choice multiple-radio">
+      <input id="hei" name="loantype" type="checkbox" value="waste-farm-agricultural">
+      <label for="hei" style="font-weight:bold">
+        Money from your school, college or university
+        <span class="form-hint" style="color:black">
+            This is may be a bursary form your higher education instatution to 
+        </span>
+      </label>
+    </div> -->
+
+            
+    <div class="multiple-choice multiple-radio">
+      <input id="overseasgrant" name="loantype" type="checkbox" value="overseashelp">
+      <label for="overseasgrant" style="font-weight:bold">
+        Overseas grants, loans or stipends
+        <span class="form-hint" style="color:black">
+           <!--  Te dicam invenire ius. Purto democritum cu eum, cu pro utinam vivendum facilisis, utinam mollis in est. Quod eripuit nam an, elitr quaeque civibus mel ad. Pri id illum dolorem postulant. -->
+        </span>
+      </label>
+    </div>
+
+        <div class="form-group" style="margin-bottom:0em">
+          <p>Or</p>
+        </div>
+
+            <div class="multiple-choice multiple-radio">
+      <input id="nope" name="loantype" type="checkbox" value="nohelp">
+      <label for="nope" style="font-weight:bold; ">
+        No, I do not get any of these
+
+      </label>
+    </div>
+
+
+  </fieldset>
+<br><br>
+        <div class="form-group">
+          <input class="button" type="submit" value="Next">
+        </div>
+      </form>
+          
+    </div>
+      
+  </div>
+  
+</main>
+
+{% endblock %}

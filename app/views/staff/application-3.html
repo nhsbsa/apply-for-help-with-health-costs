@@ -199,6 +199,126 @@ border-bottom: 1px solid #bfc1c3;
 }
 
 
+.tab2 {
+    overflow: hidden;
+    border: none;
+    background-color: none;
+}
+
+/* Style the buttons that are used to open the tab content */
+.tab2 button {
+    background-color: inherit;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 0.6em;
+    transition: 0.3s;
+}
+
+/* Change background color of buttons on hover */
+.tab2 button:hover {
+    background-color: #ddd;
+}
+
+/* Create an active/current tablink class */
+.tab2 button.active {
+    background-color: #ccc;
+        border: 1px solid ;
+
+}
+
+.tablinks{
+font-size:16px;
+}
+    .toggle {
+    float:right;
+    text-decoration: underline;
+    color: #005ea5;
+}
+    .link-back {
+  display: -moz-inline-stack;
+  display: inline-block;
+  position: relative;
+  font-family: Arial, sans-serif;
+  font-weight: 400;
+  text-transform: none;
+  font-size: 14px;
+  line-height: 1.14286;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  padding-left: 14px;
+  text-decoration: none;
+      border-bottom: 1px solid #005ea5
+}
+
+@media (min-width: 641px) {
+  .link-back {
+    font-size: 16px;
+    line-height: 1.25;
+  }
+}
+
+.link-back:link, .link-back:visited, .link-back:hover, .link-back:active {
+  color: #005ea5;
+}
+
+.link-back::before {
+  content: '';
+  display: block;
+  width: 0;
+  height: 0;
+  border-top: 5px solid transparent;
+  border-right: 6px solid #005ea5;
+  border-bottom: 5px solid transparent;
+  position: absolute;
+  left: 0;
+  top: 50%;
+  margin-top: -6px;
+}
+
+input.submit {
+  margin-left:-6.5px; 
+    width: 36px;
+    height: 38px;
+    border: 1px solid #005ea5;
+    border-width: 0 0 0 1px;
+    border-left-color: #222;
+    border-radius: 0;
+    overflow: hidden;
+    text-indent: -5000px;
+    color: #fff;
+    background-color: #005ea5;
+    background-image: url(https://assets.publishing.service.gov.uk/static/search-button-ca89b2a79f944909ceb7370d3f0b78811d32b96e883348fcd8886f63dd619585.png);
+    background-repeat: no-repeat;
+   background-position: 0%;
+}
+
+.button-toggle{
+    float: right;
+    font-weight: 400;
+    text-transform: none;
+    font-size: 14px;
+    line-height: 1.1428571429;
+    cursor: pointer;
+    background: none;
+    border: none;
+    color: #005ea5;
+    text-decoration: underline;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+}
+.tab2 button {
+    background-color: inherit;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 0.6em;
+    transition: 0.3s;
+}
+
+
 
 
 </style>
@@ -649,6 +769,37 @@ border-bottom: 1px solid #bfc1c3;
 </div> 
 
 <div id="Madrid" class="tabcontent">
+<div class="tab-content current" id="tab-3" style="margin:0px">
+                            <br>
+                            <div class="tab2" style="border-bottom: 1px solid #bfc1c3; padding-bottom: 0.8em">
+                                <button class="tablinks active" style="background-color: #ccc;
+    border: 1px solid;">Applicant 1</button>
+                                <button class="tablinks">Applicant 2 </button>
+                
+                            </div>
+
+                            <!-- Tab content -->
+                            
+                            <div class="tabcontent" id="Paris" style="display: none;">
+                                <button class="button-toggle" id="toggle">Show yes and no answers</button>
+                                    api
+                                                <table class="internal-table">
+                                        <tbody>
+                                            <tr class="target" style="display:none;">
+                                                <td>Get a State Pension</td>
+                                                <td class="bold">Yes</td>
+                                            </tr>
+                                            <tr><td>State Pension amount</td>
+                                                <td class="bold">£122.30</td>
+                                            </tr>
+                                            <tr>
+                                                <td>State Pension frequency</td>
+                                                <td class="bold">Paid every 4 weeks</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                        </div>
  <table class="check-your-answers">
 
     <thead>
@@ -661,11 +812,9 @@ border-bottom: 1px solid #bfc1c3;
   State pension
         </th>
         <th>
-        Applicant 1
+
         </th>
-                <th>
-        Applicant 2
-        </th>
+
       </tr>
     </thead>
 
@@ -677,9 +826,7 @@ border-bottom: 1px solid #bfc1c3;
         <td class="bold">
           Yes
         </td>
-        <td class="bold">
-          Yes
-        </td>
+
       </tr>
       <tr>
         <td>
@@ -688,9 +835,7 @@ border-bottom: 1px solid #bfc1c3;
         <td class="bold">
           Paid every 4 weeks
         </td>
-                <td class="bold">
-          Paid every 4 weeks
-        </td>
+
       </tr>
       <tr>
         <td >
@@ -699,9 +844,7 @@ border-bottom: 1px solid #bfc1c3;
         <td class="bold" >
           £122.30
         </td>
-        <td class="bold" >
-          £122.30
-        </td>
+
 
       </tr>
 
@@ -717,7 +860,7 @@ border-bottom: 1px solid #bfc1c3;
         </th>
         <th>
         </th>
-        <th></th>
+
       </tr>
     </thead>
 
@@ -729,9 +872,7 @@ border-bottom: 1px solid #bfc1c3;
         <td class="bold" style="width: 31.5%">
           Yes
         </td>
-        <td class="bold">
-          No
-        </td>
+
       </tr>
       <tr>
         <td>
@@ -740,7 +881,7 @@ border-bottom: 1px solid #bfc1c3;
         <td class="bold">
           Paid every 4 weeks
         </td>
-        <td></td>
+
       </tr>
       <tr>
         <td style="border-bottom: none">
@@ -749,19 +890,22 @@ border-bottom: 1px solid #bfc1c3;
         <td class="bold" style="border-bottom: none">
           £122.30
         </td>
-        <td class="bold" style="border-bottom: none">
-        </td>
+ 
       </tr>
 
     </tbody>
   </table>
 
+
 </div> 
+
       </div>
+
     </div>
   </div>
 
 </main>
+
 
 <script >
 function openCity(evt, cityName) {
