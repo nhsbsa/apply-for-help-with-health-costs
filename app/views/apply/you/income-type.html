@@ -21,13 +21,13 @@
                 <h1 class="page-header--lede heading-large">What income do you get?</h1>
                  {% endif %}
             </header>
-<div class="panel panel-border-wide">
+<!-- <div class="panel panel-border-wide">
   <p>You've already told us about:</p>
   <ul class="list-bullet">
   <li>Contribution-based Jobseeker's Allowance</li>
   </ul>
   </div>
-<br>
+<br> -->
   <form action="incometype-handler" class="form" method="get">
 
   <p style="color:grey">Select all that apply</p>
@@ -39,7 +39,7 @@
           </legend>
           <div class="multiple-choice multiple-radio">
             <input id="wages" name="incometype" value="earned-income" type="checkbox">
-            <label for="wages">Wages</label>
+            <label for="wages">Wages from a job or self-employment</label>
           </div>
           <div class="multiple-choice multiple-radio">
             <input id="benefits" name="incometype" value="benefits-income" type="checkbox">
@@ -50,10 +50,10 @@
             <input id="pension" name="incometype" value="pension-income" type="checkbox">
             <label for="pension">Pensions (state, work, private)</label>
           </div>
-                                       <div class="multiple-choice multiple-radio">
+<!--                                        <div class="multiple-choice multiple-radio">
             <input id="student" name="incometype" value="student-loan" type="checkbox">
             <label for="student">Student loans, grants or bursaries</label>
-          </div>
+          </div> -->
  
                              <div class="multiple-choice multiple-radio">
             <input id="maintenance" name="incometype" value="maintenance-from-ex" type="checkbox">
