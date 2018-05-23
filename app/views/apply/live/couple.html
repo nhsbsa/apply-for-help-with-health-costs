@@ -15,7 +15,7 @@
 
 
              <header class="page-header">
-                <p class="page-header--sub heading-secondary"><span class="visuallyhidden">This section is </span>Who lives with you</p>
+                <p class="page-header--sub heading-secondary"><span class="visuallyhidden">This section is </span>People who live with you</p>
                  {% if thirdparty %}
                 <h1 class="page-header--lede heading-large">Does {{firstname}} live with a partner?</h1>
                 {% else %}
@@ -27,7 +27,7 @@
   <p>This means you live together as a couple, you don't have to be married or in a civil partnership.</p>
 
 
-  <form action="" method="get" class="form">
+  <form action="husband-handler" method="get" class="form">
 
        <div class="form-group">
           
@@ -37,12 +37,12 @@
             </legend>
 
             <div class="multiple-choice">
-              <input id="yes" type="radio" name="part" value="yes">
+              <input id="yes" type="radio" name="husband" value="yes">
               <label for="yes">Yes</label>
             </div>
 
             <div class="multiple-choice">
-              <input id="no" type="radio" name="part" value="no">
+              <input id="no" type="radio" name="husband" value="no">
               <label for="no">No</label>
             </div>
             

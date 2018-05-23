@@ -42,41 +42,22 @@
              {% endif %}
             </header>
 
+  <p>You can give a mobile or landline number. We'll only contact you about this application.</p>
 
-  <form action="mobile-c-handler" method="get" class="form">
 
-
-    <p>You can give a mobile or landline number.</p>
-
-      
+  <form>
 
     <div class="form-item-wrapper">
 
 <div class="form-group" style="margin-bottom: 1em">
      <label for="phone" class="visuallyhidden" aria-describedby="hint-phone">What is your telephone number?</label></div>
-  <input class="form-control" id="telephone-number" name="telephone-number" type="text">
-<!-- 
-<br><br> -->
+  <input class="form-control" id="telephone-number" name="telephone-number" type="text" style="margin-bottom:0.5em">
 
-  <div id="block_container">
-
-    
-    <div id="bloc1"><img src="/public/images/bsa/deaf.svg" height="48px"></div>
-<div id="bloc2" class="multiple-choice multiple-radio image" style="margin-bottom:2em;">
+         <div class="multiple-choice multiple-radio">
 
             <input id="email" name="email" type="checkbox" value="true">
-            <label for="email">I need you to contact me using the Text Relay service</label>
+            <label for="email">I'm deaf or hard of hearing and use a Text Relay service</label>
           </div>
-
-</div>
-         <div class="multiple-choice multiple-radio image" style="margin-bottom:2em;">
-
-            <input id="email" name="email" type="checkbox" value="true">
-            <label for="email">I need you to contact me using the Text Relay service</label>
-          </div>
-          </div>
-
-
 
 <!--                  <details role="group">
               <summary><span class="summary" role="button" aria-controls="details-content-0" aria-expanded="true">
@@ -87,9 +68,6 @@ I need to tell you more about how to use my phone number
                             <fieldset>
                                 <legend class="visuallyhidden">Select the option that applies to you</legend>
                                 
-                     
-
-
             <div class="multiple-choice">
               <input id="applicant-contact" type="radio" name="thirdpartycontact" value="applicant-contact">
               <label for="applicant-contact">Text only (no voice calls)</label>
@@ -102,17 +80,27 @@ I need to tell you more about how to use my phone number
        </fieldset>
 </details> -->
     
-    <div class="form-item-wrapper">
-      <div class="form-group">
-        <input class="button" type="submit" value="Next">
-      </div>
-    </div>
     
 <!--     <p class="navigation"><a class="cancel" href="start">Cancel</a></p> -->
-    
+
   </form>
+  <div class="form-group">
+   <p style="margin-top:2em; margin-bottom: 0em">
+      <a class="summary" href="email-address">I don't have a telephone number</a>
+      </p>
+</div>
+
+  <div class="form-group" style="margin-top: 0em">
+   <p>
+          <a class="button" href="email-address" id="next">Next</a>
+        </p>
+        </div>
+
     </div>
+
     </div>
+
+
 </main>
 
 {% endblock %}

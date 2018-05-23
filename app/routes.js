@@ -133,6 +133,25 @@ var thisYear = 2017;
       }
     });
 
+        // asylum seekers
+    router.get(/asylum-handler/, function (req, res) {
+      if (req.query.asylum === 'yes') {
+        res.redirect('asylum-seeker-type');
+      } else {
+        res.redirect('benefits-question');
+      }
+    });
+
+            // asylum seekers
+    router.get(/refugee-handler/, function (req, res) {
+      if (req.query.refugee === 'waiting') {
+        res.redirect('full-exemption-asylum-seeker');
+      } else {
+        res.redirect('benefits-question');
+      }
+    });
+
+
     //release 1 savings handler *note* this will change according to carehome answer in next iteration
     router.get(/savings6k-handler/, function (req, res) {
       if (req.query.savings === 'yes') {
@@ -222,7 +241,7 @@ router.get(/registration-third-party/, function (req, res) {
 // authority assessment?
     router.get(/authority-assessed-handler/, function (req, res) {
       if (req.query.authority === 'yes') {
-        res.redirect('declaration-carehome');
+        res.redirect('living-summary-care');
       } else {
         res.redirect('../../live/living-summary-care');
       }
@@ -468,6 +487,15 @@ router.get(/telephone-c-handler/, function (req, res) {
 //   });
 // });
 
+
+    // partner
+    router.get(/husband-handler/, function (req, res) {
+      if (req.query.husband === 'yes') {
+        res.redirect('name-couple');
+      } else {
+        res.redirect('children-under-20');
+      }
+    });
 
     // children
     router.get(/children-handler/, function (req, res) {
@@ -740,7 +768,7 @@ router.get(/telephone-c-handler/, function (req, res) {
 
 router.get(/benefits-handler/, function (req, res) {
       if (req.query.benefittc == 'no') {
-      res.redirect('saving-6k'); 
+      res.redirect('only-incomer2'); 
       } else {
         res.redirect('uc-getting-paid-step1');
       }
@@ -758,10 +786,6 @@ router.get(/getuc-handler/, function (req, res) {
 });
 
 
-
-
-
-
      router.get(/statepen-handler/, function (req, res) {
       if (req.query.statepen== 'yes') {
         res.redirect('pension_statepension-frequency');
@@ -769,6 +793,29 @@ router.get(/getuc-handler/, function (req, res) {
         res.redirect('pension_other-pension');
       }
     });
+
+          router.get(/credpen-handler/, function (req, res) {
+      if (req.query.credpen== 'yes') {
+        res.redirect('pension_pension-credit-type');
+      } else {
+        res.redirect('pension_statepension-frequency');
+      }
+    });
+                    router.get(/another-pen/, function (req, res) {
+      if (req.query.anotherpen== 'yes') {
+        res.redirect('pension_pension-name');
+      } else {
+        res.redirect('/apply/task-list/task-list_5');
+      }
+    });
+              // pension credit handler
+          router.get(/credittype-handler/, function (req, res) {
+      if (req.query.pensioncredit == 'guaranteecred') {
+      res.redirect('/apply/preapp/full-exemption-pencredits'); 
+      } else {
+        res.redirect('pension_statepension-frequency');
+      }
+});
 
          router.get(/kickout-handler/, function (req, res) {
       if (req.query.kickout== 'Yes') {
@@ -914,7 +961,7 @@ var benType;
     // pension credit handler
           router.get(/pensioncredit-handler/, function (req, res) {
       if (req.query.pensioncredit == 'guaranteecred') {
-      res.redirect('full-exemption-pencredits'); 
+      res.redirect('/apply/preapp/full-exemption-pencredits'); 
       } else {
         res.redirect('only-incomer2');
       }
@@ -984,13 +1031,21 @@ var benType;
                 res.redirect('../declaration_r1');
       }
     });
+                        // alevel or higher
+      router.get(/study-handler/, function (req, res) {
+      if (req.query.study === 'yes') {
+        res.redirect('over-alevel');
+            } else {
+                res.redirect('education-summary');
+      }
+    });
 
                   // alevel or higher
       router.get(/alevel-handler/, function (req, res) {
       if (req.query.alevel === 'yes') {
         res.redirect('final-year');
             } else {
-                res.redirect('/apply/design-sprints/sprint21/check-list_income-new-2');
+                res.redirect('/apply/task-list/task-list_4');
       }
     });
 
@@ -1019,6 +1074,23 @@ var benType;
       }
     });
 
+                              // parent student money
+      router.get(/parenmoney-handler/, function (req, res) {
+      if (req.query.parenmoney == 'yes') {
+        res.redirect('parent-money-amount');
+            } else {
+              res.redirect('other-money');
+      }
+    });
+    
+     // parent student money
+      router.get(/studentother-handler/, function (req, res) {
+      if (req.query.studentother == 'yes') {
+        res.redirect('other-money-amount');
+            } else {
+              res.redirect('education-summary');
+      }
+    });
 
     // no income
       router.get(/incometype-handler/, function (req, res) {

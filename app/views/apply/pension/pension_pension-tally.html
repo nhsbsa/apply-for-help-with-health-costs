@@ -50,28 +50,30 @@
                 <p>Because at least one of the pensions you've told us about is a foreign pension will likely need more information about them.</p>
             </div> -->
 
-             <form action="" method="get" class="form">
+             <form action="another-pen" method="get" class="form">
 
-             <h2 class="heading-small">State pension</h2>
+    <!--          <h2 class="heading-small">State pension</h2> -->
    <table>
 
   <tbody>
+      <tr>
+      <td>Pension Credit</td>
+      <td style="width: 40%">Savings credit</td>
+      <td></td>
+<!--       <td style="width: 25%"><a href="#">Edit<span class="visuallyhidden">Scottish Widows pension amount or frequency of payments</span></a> or <a href="#">Remove<span class="visuallyhidden">Scottish Widows from your pension income</span></a>
+       </td> -->
+    </tr>
     <tr>
       <td>State Pension</td>
       <td style="width: 39%">£489.20 every 4 weeks</td>
        <td style="width: 25%"><a href="#">Edit<span class="visuallyhidden">State Retirement pension amount or frequency of payments</span></a> or <a href="#">Remove<span class="visuallyhidden">State retirement pension from your pension income</span></a>
        </td>
     </tr>
-<!--     <tr>
-      <td>Pension Credit</td>
-      <td style="width: 40%">Savings credit</td>
-      <td style="width: 25%"><a href="#">Edit<span class="visuallyhidden">Scottish Widows pension amount or frequency of payments</span></a> or <a href="#">Remove<span class="visuallyhidden">Scottish Widows from your pension income</span></a>
-       </td>
-    </tr> -->
+
 
   </tbody>
 </table>
-<br>
+<!-- <br>
   <h2 class="heading-small">Private or workplace pensions</h2>
    <table>
 
@@ -94,7 +96,7 @@
       <td style="width: 25%"><a href="#">Edit<span class="visuallyhidden">NHS pension amount or frequency of payments</span></a> or <a href="#">Remove<span class="visuallyhidden">NHS from your pension income</span></a>
        </td>
     </tr>
-    <tr>
+    <tr> -->
 
 <!--     <tr>
       <td>HMRC Nuvos</td>
@@ -108,11 +110,10 @@
       <td style="width: 25%"><a href="#">Edit<span class="visuallyhidden">Scottish Widows pension amount or frequency of payments</span></a> or <a href="#">Remove<span class="visuallyhidden">Scottish Widows from your pension income</span></a>
        </td>
     </tr> -->
-  </tbody>
-</table>
+<!--   </tbody>
+</table> -->
 
 
-<br>
 
             <!-- <ul class="list check-your-answers--amend">
               <li class="group">
@@ -147,16 +148,35 @@
             </ul>
  -->
 
-        <a href="#">+ Add another pension</a>
+<!--         <a href="#">+ Add another pension</a> -->
 
-        <br><br><br>
-  <div class="form-item-wrapper">
-    <div class="form-group">
-      
-        <a href="/apply/design-sprints/sprint21/check-list_declaration-new" class="button " id="next">Next</a>
-      
-    </div>
-  </div>
+<h2 class="heading-medium">Do you get another pension?</h2>
+<form action="another-pen" method="get" class="form">
+
+       <div class="form-group">
+          
+          <fieldset class="inline">
+            <legend class="visually-hidden">
+               Do you get another pension? 
+            </legend>
+
+            <div class="multiple-choice">
+              <input id="yes" type="radio" name="anotherpen" value="yes">
+              <label for="yes">Yes</label>
+            </div>
+
+            <div class="multiple-choice">
+              <input id="no" type="radio" name="anotherpen" value="no">
+              <label for="no">No</label>
+            </div>
+            
+          </fieldset>  
+          
+        </div>
+
+        <div class="form-group">
+          <input class="button" type="submit" value="Next">
+        </div>
 
       </form>
 
