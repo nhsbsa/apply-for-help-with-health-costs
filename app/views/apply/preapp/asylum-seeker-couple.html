@@ -15,26 +15,30 @@
           <header class="page-header">
             <p class="page-header--sub heading-secondary"><span class="visuallyhidden">This section is </span> Before you start</p>
   
-            <h1 class="page-header--lede heading-large">Have {{partnerortext}} applied for asylum to stay in the UK?</h1>
+            <h1 class="page-header--lede heading-large">couple page</h1>
             </header>
 
-<form action="asylum-handler" method="get" class="form">
+<form action="refugee-handler" method="get" class="form">
 
        <div class="form-group">
           
-          <fieldset class="inline">
+          <fieldset class="">
             <legend class="visually-hidden">
               Do you live with a partner?
             </legend>
 
             <div class="multiple-choice">
-              <input id="yes" type="radio" name="asylum" value="yes">
-              <label for="yes">Yes</label>
+              <input id="waiting" type="radio" name="refugee" value="waiting">
+              <label for="waiting">Still waiting for asylum decision or the outcome of an appeal</label>
             </div>
 
             <div class="multiple-choice">
-              <input id="no" type="radio" name="asylum" value="no">
-              <label for="no">No</label>
+              <input id="stay" type="radio" name="refugee" value="stay">
+              <label for="stay">Given permission to stay</label>
+            </div>
+            <div class="multiple-choice">
+              <input id="refused" type="radio" name="refugee" value="refused">
+              <label for="refused">Refused permission to stay</label>
             </div>
             
           </fieldset>  

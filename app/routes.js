@@ -62,35 +62,81 @@ var thisYear = 2017;
 
 
 
-         // partner handler v2
+        //do you want to apply online ?
+    router.get(/applyonline-handler/, function (req, res) {
+          if (req.query.online === 'yes') {
+            res.redirect('preapp_eligibility-info-docsv3');
+      } else {
+        res.redirect('preapp_eligibility-not-online');
+      }
+    });
+
+    router.get(/partner/, function (req, res) {
+  res.render('apply/preapp/partner', {
+    thirdparty : benificiary.thirdParty,
+    firstname : benificiary.firstname
+  });
+});
+
+
+    // partner handler v2
     router.get(/testing-handler/, function (req, res) {
-      sprint = req.url.charAt(5);
       if (req.query.partner === 'yes') {
         applicant.partner = true;
       } else if (req.query.partner === 'no') {
         applicant.partner = false;
-        //aboutPartnerStatus = completedText;
-        //aboutPartnerLink = changeText;
       }
       setPartnerText(applicant.partner);
         if(req.query.partner === 'yes') {
-          res.redirect('/apply/start');
+           res.render('apply/preapp/asylum-seeker', {
+                'partnerortext' : partnerOrText,
+      });
         } else {
-            res.redirect('/apply/start');
+             res.render('apply/preapp/asylum-seeker', {
+                'partnerortext' : partnerOrText,
+        });
         }
     });
 
+    router.get(/asylum-handler/, function (req, res) {
+      if (applicant.partner = true ) {
+        if (req.query.asylum === 'yes') {
+          res.redirect('asylum-seeker-couple');
+        } 
+        if (req.query.asylum === 'no') {
+          res.redirect('benefits-question');
+        }
+        // } else if (req.query.asylum === 'yes' ) {
+        //   res.redirect('asylum-seeker-type');
+        //}
+      } else if (applicant.partner = false) {
+        if (req.query.asylum === 'yes') {
+         res.redirect('asylum-seeker-type') 
+        }
+        if (req.query.asylum === 'no') {
+          res.redirect('benefits-question');
+        }
+      }
+  });
 
-        //do you want to apply online ?
-    router.get(/applyonline-handler/, function (req, res) {
-          if (req.query.online === 'yes') {
-          res.render('apply/preapp/preapp_eligibility-info-docsv3', {
-              'partnerortext' : partnerOrText
-          });
+
+    //         // asylum seekers
+    // router.get(/asylum-handler/, function (req, res) {
+    //       (req.query.asylum === 'yes') {
+    //     res.redirect('asylum-seeker-type');
+    //   } else {
+    //     res.redirect('benefits-question');
+    //   }
+    // });
+
+
+            // asylum seekers
+    router.get(/refugee-handler/, function (req, res) {
+
+      if (req.query.refugee === 'waiting') {
+        res.redirect('full-exemption-asylum-seeker');
       } else {
-        res.render('apply/preapp/preapp_eligibility-not-online', {
-        'partnerortext' : partnerOrText,
-        });
+        res.redirect('benefits-question');
       }
     });
 
@@ -100,20 +146,11 @@ var thisYear = 2017;
       if (req.query.nonDep === 'yes') {
         res.redirect('kickout_release2-no-answer');
       } else {
-                 res.render('apply/preapp/only-incomer2', {
-                'partnerortext' : partnerOrText,
+        res.render('apply/preapp/only-incomer2', {
+        'partnerortext' : partnerOrText,
         });
       }
     });
-
-    //     // mon-dependant (release 1 reuseable)
-    // router.get(/non-dephandler/, function (req, res) {
-    //   if (req.query.nonDep === 'yes') {
-    //     res.redirect('kickout_release2-no-answer');
-    //   } else {
-    //     res.redirect('pension-only-income');
-    //   }
-    // });
 
 // pension your only income (release 1: to be removed completely as we iterate- not reusable)
     router.get(/penincome-handler/, function (req, res) {
@@ -133,21 +170,13 @@ var thisYear = 2017;
       }
     });
 
-        // asylum seekers
-    router.get(/asylum-handler/, function (req, res) {
-      if (req.query.asylum === 'yes') {
-        res.redirect('asylum-seeker-type');
-      } else {
-        res.redirect('benefits-question');
-      }
-    });
 
-            // asylum seekers
-    router.get(/refugee-handler/, function (req, res) {
-      if (req.query.refugee === 'waiting') {
-        res.redirect('full-exemption-asylum-seeker');
+
+                router.get(/save-handler/, function (req, res) {
+      if (req.query.save === 'yes') {
+        res.redirect('save-return-email');
       } else {
-        res.redirect('benefits-question');
+        res.redirect('/apply/task-list/task-list_1');
       }
     });
 
@@ -171,28 +200,6 @@ var thisYear = 2017;
     });
     
 
-    // //do all these apply to you?- removed 16.01.18 by lindsay and helen
-    // router.get(/preapp-check/, function (req, res) {
-    //   if (req.query.criteria === 'own' && 'pension') {
-    //     res.redirect('preapp_eligibility-not-online');
-    //   } else {
-    //     res.redirect('preapp_eligibility-info-docsv2');
-    //   }
-    // });
-
-    // // //do all these apply to you?
-    // router.get(/preapp-check/, function (req, res) {
-    //         if (req.query.eligible1 == "true") {
-    //         res.redirect('tax-credits-income'); 
-
-    //       } else if (req.query.pencredit == "true") {
-    //         benType = 'Pension Credit (Guarantee Credit)';
-    //         res.render('apply/preapp/benefits-pension', {
-    //     });
-    //       } else if (req.query.none == 'true') {
-    //           res.redirect('preapp-summary')
-    //       }
-    //     });
 
 
 // Who's it for?
@@ -267,65 +274,7 @@ router.get(/name-handler/, function (req, res) {
   res.redirect('dob');
 });
 
-// not for this iteration
-    // router.get(/birth-handler/, function (req, res) {
-    //   applicant.age = (thisYear - req.query.dobyear);
-    //   console.log(applicant.age);
-    //   if (applicant.age <= 15) {
-    //     res.render('apply/you/full-exemption-u16', {
-    //     });
-    //       } else if (benificiary.thirdParty == true) {
-    //     res.render('apply/you/post-address', {
-    //       thirdparty : benificiary.thirdParty,
-    //       firstname : benificiary.firstname
-    //     });
-    //   } else {
-    //     res.redirect('post-address');
-    //   }
-    // });
 
-
-
-router.get(/partner/, function (req, res) {
-  res.render('apply/preapp/partner', {
-    thirdparty : benificiary.thirdParty,
-    firstname : benificiary.firstname
-  });
-});
-
-    //pension credit
-    router.get(/p2-handler/, function (req, res) {
-      if (req.query.partner=== 'yes') {
-        res.redirect('kickout_release2-no-answer');
-      } else {
-        res.redirect('non-dependants');
-      }
-    });
-
- //         // partner handler v2
- //    router.get(/p2-handler/, function (req, res) {
- //      sprint = req.url.charAt(5);
- //      if (req.query.partner === 'yes') {
- //        applicant.partner = true;
- //        //aboutPartnerStatus = "Started";
- //        //aboutPartnerLink = continueText;
- //      } else if (req.query.partner === 'no') {
- //        applicant.partner = false;
- //        //aboutPartnerStatus = completedText;
- //        //aboutPartnerLink = changeText;
- //      }
- //      setPartnerText(applicant.partner);
- // if (benificiary.thirdParty == true) {
- //        res.render('apply/preapp/kickout_release2-no-answer', {
- //          thirdparty : benificiary.thirdParty,
- //          firstname : benificiary.firstname
- //        });   
- //        } else {
- //            res.render('apply/you/children-under-20', {
- //                'partnerandtext' : partnerAndText,
- //            });
- //        }
- //    });
 
 
     //pension credit
@@ -1002,7 +951,7 @@ var benType;
         res.redirect('pension-summary-state');
       }
     });
-                      // ESA who gets it?
+     // ESA who gets it?
             router.get(/esawho-handler/, function (req, res) {
       if (req.query.partner === 'true') {
         res.redirect('benefits_benefits-who-jsa');
@@ -1010,6 +959,8 @@ var benType;
         res.redirect('benefits_benefits-amount-esa');
       }
     });
+
+
 
                                   // sicknotes
             router.get(/sicknote-handler/, function (req, res) {
@@ -1019,6 +970,9 @@ var benType;
         res.redirect('sick-note-stopped');
       }
     });
+
+
+
 
             
 // pip

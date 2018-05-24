@@ -1,8 +1,7 @@
-{% extends 'templates/nhs_transaction_layout.html' %}
-{% import 'includes/form_macros.html' as form_macros %}
+ {% extends "layout_bsa.html" %}
 
-{% block afterHeader %}
-  {% include "includes/service-headers/low-income.html" %}
+{% block page_title %}
+  Help paying for NHS Costs prototype
 {% endblock %}
 
 {% block content %}
@@ -24,12 +23,9 @@
           </fieldset>
         </div>
 
-        {{
-          form_macros.button({
-            label: 'Next',
-            href: '../lis-home'
-          })
-        }}
+                    <p>
+          <a class="button" href="#" id="next">Apply now</a>
+        </p>
 
         <p class="navigation"><a class="cancel" href="">I didn't get a code</a></p>
 

@@ -1,0 +1,76 @@
+ {% extends "layout_bsa.html" %}
+
+{% block page_title %}
+  Help paying for NHS Costs prototype
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+  <a href="javascript:history.go(-1)" class="link-back">Back</a>
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+            <header class="page-header">
+            <p class="page-header--sub heading-secondary"><span class="visuallyhidden">This section is </span>Before you start</p>
+
+            <h1 class="page-header--lede heading-large">Save and return later</h1>
+
+            </header>
+
+
+      <form method="get" action="save-return-email-correct" class="form">
+
+
+        <fieldset>
+          <legend class="visuallyhidden">
+            Save and return later
+          </legend>
+
+          <div class="form-group">
+            <label class="form-label" for="user_email" >Email address</label>
+            <input class="form-control form-control-3-4" id="user_email" name="user_email" type="text" value="{{data['user_email']}}">
+          </div>
+
+          <details>
+
+          <summary><span class="summary">No email address?</span></summary>
+
+          <div class="panel panel-border-narrow">
+
+            <p>
+              You can save and return with a text message if you don't have an email account.
+            </p>
+
+            <legend class="visuallyhidden">
+              Mobile phone number
+            </legend>
+
+            <label class="form-label" for="user_phone">
+              Mobile phone number
+            </label>
+            <input class="form-control" id="user_phone" type="text" name="user_phone">
+
+          </div>
+
+          </details>
+
+          <br>
+
+        </fieldset>
+
+        <div class="form-group">
+          <input type="submit" class="button" value="Continue" />
+        </div>
+
+      </form>
+
+    </div>
+  </div>
+
+</main>
+
+{% endblock %}
+
+
+

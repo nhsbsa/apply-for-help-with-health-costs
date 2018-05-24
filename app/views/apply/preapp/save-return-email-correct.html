@@ -1,0 +1,59 @@
+ {% extends "layout_bsa.html" %}
+
+{% block page_title %}
+  Help paying for NHS Costs prototype
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+  <a href="javascript:history.go(-1)" class="link-back">Back</a>
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+            <header class="page-header">
+            <p class="page-header--sub heading-secondary"><span class="visuallyhidden">This section is </span>Before you start</p>
+
+            <h1 class="page-header--lede heading-large">Make sure this is right</h1>
+
+            </header>
+
+
+
+      <form method="get" action="/apply/task-list/task-list_1" class="form">
+
+        
+
+          <fieldset>
+            <legend class="visuallyhidden">
+              Email
+            </legend>
+
+            <div class="form-group">
+              <input class="form-control form-control-3-4" id="send_email_here" name="send_email_here" value="{{data['user_email']}}" type="text">
+            </div>
+
+            <br>
+            <br>
+
+          </fieldset>
+
+          <div class="form-group">
+            <input class="button" value="Yes - this is my email" type="submit">
+          </div>
+
+          <p>If your email address is wrong, just change it above.</p>
+
+        
+
+
+      </form>
+
+    </div>
+    </div>
+</main>
+
+{% endblock %}
+
+
+
