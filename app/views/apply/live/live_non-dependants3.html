@@ -12,29 +12,28 @@
   <div class="grid-row">
     <div class="column-two-thirds">
 
-      <header class="page-header">
+
+    <header class="page-header">
           <p class="page-header--sub heading-secondary"><span class="visuallyhidden">This section is</span>People who live with you</p>
-          <h1 class="page-header--lede heading-large">Is {first name} a boarder or lodger?</h1>
+          <h1 class="page-header--lede heading-large">Apart from your partner, does anyone live with you who is 18 or older?</h1>
         </header>
 
-<p>Do not count them as a boarder or lodger if they live with you as part of your family.</p>
-
-  <form action="boarder-handler" method="get" class="form">
+  <form action="non-dephandler" method="get" class="form">
 
        <div class="form-group">
           
           <fieldset class="inline">
             <legend class="visually-hidden">
-               Are they a boarder or lodger? 
+              Does anyone else live with you at {{data['address-lineone']}}?
             </legend>
 
             <div class="multiple-choice">
-              <input id="yes" type="radio" name="boarder" value="yes">
+              <input id="yes" type="radio" name="nonDep" value="yes">
               <label for="yes">Yes</label>
             </div>
 
             <div class="multiple-choice">
-              <input id="no" type="radio" name="boarder" value="no">
+              <input id="no" type="radio" name="nonDep" value="no">
               <label for="no">No</label>
             </div>
             

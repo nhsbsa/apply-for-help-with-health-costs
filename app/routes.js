@@ -54,6 +54,7 @@ applicant.contactPref = 'post';
 applicant.contactValue = '3 street, Town, NE1 246';
 applicant.email = null;
 applicant.address = null;
+applicant.partner = null;
 
 
 var thisYear = 2017;
@@ -99,23 +100,16 @@ var thisYear = 2017;
     });
 
     router.get(/asylum-handler/, function (req, res) {
-      if (applicant.partner = true ) {
-        if (req.query.asylum === 'yes') {
-          res.redirect('asylum-seeker-couple');
-        } 
-        if (req.query.asylum === 'no') {
-          res.redirect('benefits-question');
-        }
-        // } else if (req.query.asylum === 'yes' ) {
-        //   res.redirect('asylum-seeker-type');
-        //}
-      } else if (applicant.partner = false) {
-        if (req.query.asylum === 'yes') {
-         res.redirect('asylum-seeker-type') 
-        }
-        if (req.query.asylum === 'no') {
-          res.redirect('benefits-question');
-        }
+      if (applicant.partner == true && req.query.asylum === 'yes') {  
+        res.redirect('asylum-seeker-couple');
+      } else if (applicant.partner == true && req.query.asylum === 'no') {
+        res.redirect('benefits-question');
+      } else if (applicant.partner == false && req.query.asylum === 'yes') {
+        res.redirect('asylum-seeker-type');
+      } else if (applicant.partner == false && req.query.asylum === 'no') {
+        res.redirect('benefits-question');
+      } else {
+        return false();
       }
   });
 
@@ -750,6 +744,7 @@ router.get(/getuc-handler/, function (req, res) {
         res.redirect('pension_statepension-frequency');
       }
     });
+     
                     router.get(/another-pen/, function (req, res) {
       if (req.query.anotherpen== 'yes') {
         res.redirect('pension_pension-name');
@@ -972,6 +967,57 @@ var benType;
     });
 
 
+                  // others in home
+      router.get(/peeps-handler/, function (req, res) {
+      if (req.query.peeps === 'yes') {
+        res.redirect('live_live-name');
+            } else {
+                res.redirect('living-summary');
+      }
+    });
+                  // others in home
+      router.get(/dudes-handler/, function (req, res) {
+      if (req.query.dudes === 'yes') {
+        res.redirect('live_live-name');
+            } else {
+                res.redirect('living-summary');
+      }
+    });
+
+                        // boarder
+      router.get(/boarder-handler/, function (req, res) {
+      if (req.query.boarder === 'yes') {
+        res.redirect('live_boarder-frequency');
+            } else {
+                res.redirect('live_nondep-student');
+      }
+    });
+                                    // passported ben non dep
+      router.get(/passben-handler/, function (req, res) {
+      if (req.query.passben == 'yes') {
+        res.redirect('live_nondep-benefits-age');
+            } else {
+                res.redirect('live_nondep-benefits-disability');
+      }
+    });
+
+                        // boarder
+      router.get(/disben-handler/, function (req, res) {
+      if (req.query.disben === 'yes') {
+        res.redirect('live_boarder-frequency');
+            } else {
+                res.redirect('live_nondep-blind');
+      }
+    });
+
+// passported ben non dep
+      router.get(/depjob-handler/, function (req, res) {
+      if (req.query.depjob === 'yes') {
+        res.redirect('live_nondep-benefits-age');
+            } else {
+                res.redirect('live_nondep-benefits-disability');
+      }
+    });
 
 
             

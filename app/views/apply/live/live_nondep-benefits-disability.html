@@ -12,29 +12,33 @@
   <div class="grid-row">
     <div class="column-two-thirds">
 
-      <header class="page-header">
-          <p class="page-header--sub heading-secondary"><span class="visuallyhidden">This section is</span>People who live with you</p>
-          <h1 class="page-header--lede heading-large">Is {first name} a boarder or lodger?</h1>
-        </header>
+        <header class="page-header">
+                <h1 class="page-header--lede heading-large">Does {firstname} get any of these disability benefits?</h1>
+                <p class="page-header--sub heading-secondary"><span class="visuallyhidden">This section is </span>People who live with you</p>
+  </header>
 
-<p>Do not count them as a boarder or lodger if they live with you as part of your family.</p>
-
-  <form action="boarder-handler" method="get" class="form">
+<ul class="list list-bullet">
+  <li>Daily living component of Personal Independence Payment (PIP) </li>
+  <li>Middle or higher rate of Disability Living Allowance (DLA) </li>
+  <li>Attendance Allowance</li>
+  <li>Armed Forces Independence Payment</li>
+</ul>
+  <form action="disben-handler" method="get" class="form">
 
        <div class="form-group">
           
           <fieldset class="inline">
             <legend class="visually-hidden">
-               Are they a boarder or lodger? 
+               Do they get any benefits?
             </legend>
 
             <div class="multiple-choice">
-              <input id="yes" type="radio" name="boarder" value="yes">
+              <input id="yes" type="radio" name="disben" value="yes">
               <label for="yes">Yes</label>
             </div>
 
             <div class="multiple-choice">
-              <input id="no" type="radio" name="boarder" value="no">
+              <input id="no" type="radio" name="disben" value="no">
               <label for="no">No</label>
             </div>
             
@@ -45,7 +49,6 @@
           <div class="form-group">
             <input class="button" type="submit"  value="Next">
           </div>
-
       </form>
     </div>
     </div>
