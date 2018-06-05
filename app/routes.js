@@ -107,7 +107,7 @@ var thisYear = 2017;
       } else if (applicant.partner == false && req.query.asylum === 'yes') {
         res.redirect('asylum-seeker-type');
       } else if (applicant.partner == false && req.query.asylum === 'no') {
-        res.redirect('benefits-question');
+        res.redirect('only-incomer2');
       } else {
         return false();
       }
@@ -130,7 +130,7 @@ var thisYear = 2017;
       if (req.query.refugee === 'waiting') {
         res.redirect('full-exemption-asylum-seeker');
       } else {
-        res.redirect('benefits-question');
+        res.redirect('only-incomer2');
       }
     });
 
@@ -168,7 +168,7 @@ var thisYear = 2017;
 
                 router.get(/save-handler/, function (req, res) {
       if (req.query.save === 'yes') {
-        res.redirect('save-return-email');
+        res.redirect('../save-continue/ref');
       } else {
         res.redirect('/apply/task-list/task-list_1');
       }
@@ -180,7 +180,7 @@ var thisYear = 2017;
       if (req.query.savings === 'yes') {
         res.redirect('kickout_release2-no-answer');
       } else {
-        res.redirect('education-training');
+        res.redirect('education-training-students');
       }
     });
 
@@ -972,7 +972,7 @@ var benType;
       if (req.query.peeps === 'yes') {
         res.redirect('live_live-name');
             } else {
-                res.redirect('living-summary');
+                res.redirect('live_people-in-home-summary');
       }
     });
                   // others in home
@@ -980,7 +980,7 @@ var benType;
       if (req.query.dudes === 'yes') {
         res.redirect('live_live-name');
             } else {
-                res.redirect('living-summary');
+                res.redirect('live_people-in-home-summary');
       }
     });
 
@@ -989,7 +989,7 @@ var benType;
       if (req.query.boarder === 'yes') {
         res.redirect('live_boarder-frequency');
             } else {
-                res.redirect('live_nondep-student');
+                res.redirect('live_nondep-checkbox');
       }
     });
                                     // passported ben non dep
@@ -1004,7 +1004,7 @@ var benType;
                         // boarder
       router.get(/disben-handler/, function (req, res) {
       if (req.query.disben === 'yes') {
-        res.redirect('live_boarder-frequency');
+        res.redirect('live_who-recap2');
             } else {
                 res.redirect('live_nondep-blind');
       }
@@ -1059,7 +1059,7 @@ var benType;
             } else if (req.query.loantype == 'hardshiphelp') {
               res.redirect('test3');
             } else {
-              res.redirect('test4');
+              res.redirect('term-dates');
       }
     });
 
@@ -1104,6 +1104,33 @@ var benType;
               res.redirect('test4');
       }
     });
+
+                              // non dep
+      router.get(/deptype-handler/, function (req, res) {
+      if (req.query.deptype == 'blindhelp') {
+        res.redirect('live_nondep-blind');
+            } else if (req.query.deptype == 'helpben') {
+              res.redirect('live_nondep-passport-checkbox');
+            } else if (req.query.deptype == 'workhelp') {
+              res.redirect('live_nondep-working-frequency');
+            } else {
+              res.redirect('live_who-recap2');
+      }
+    });
+
+
+                              // non dep passported
+      router.get(/passtype-handler/, function (req, res) {
+      if (req.query.passtype == 'nohelp') {
+        res.redirect('live_nondep-benefits-disability');
+            } else if (req.query.passtype == 'pensionhelp') {
+              res.redirect('live_nondep-benefits-disability');
+            } else {
+              res.redirect('live_nondep-benefits-age');
+      }
+    });
+
+
 
 // add your routes here
 

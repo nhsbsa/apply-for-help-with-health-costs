@@ -1,0 +1,100 @@
+{% extends "layout_bsa.html" %}
+ 
+{% block page_title %}
+  Help paying for NHS Costs prototype
+{% endblock %}
+
+{% block content %}
+
+<style>
+.report-a-problem-toggle {
+     margin-top: 2em;
+    font-size: 16px;
+    line-height: 1.25;
+  }
+.report-a-problem-toggle a {
+
+    color: #6f777b !important;
+    text-decoration: underline !important;
+  }
+    </style>
+
+<main id="content" role="main">
+  <a href="javascript:history.go(-1)" class="link-back">Back</a>
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+
+          <header class="page-header">
+            <p class="page-header--sub heading-secondary"><span class="visuallyhidden">This section is </span> People who live with you</p>
+  
+            <h1 class="page-header--lede heading-large">Does {first name} get any of these benefits?</h1>
+            </header>
+
+      <p class="body-text">Select all that apply</p>
+      <form class="form" action="passtype-handler" id="contact-boxes">
+
+  <fieldset>
+
+    <legend class="visually-hidden">Does {first name} get any of these benefits?</legend>
+
+    <div class="multiple-choice multiple-radio">
+      <input id="check1" name="passtype" type="checkbox" value="passportedhelp">
+      <label for="check1">
+        Income Support
+      </label>
+    </div>
+
+    <div class="multiple-choice multiple-radio">
+      <input id="check2" name="passtype" type="checkbox" value="passportedhelp">
+      <label for="check2">
+        Universal Credit
+      </label>
+    </div>
+            
+    <div class="multiple-choice multiple-radio">
+      <input id="check3" name="passtype" type="checkbox" value="passportedhelp">
+      <label for="check3">
+        income-based Jobseeker's Allowance
+      </label>
+    </div>
+        <div class="multiple-choice multiple-radio">
+      <input id="check4" name="passtype" type="checkbox" value="passportedhelp">
+      <label for="check4">
+        income-related Employment and Support Allowance
+      </label>
+    </div>
+
+    <div class="multiple-choice multiple-radio">
+      <input id="check5" name="passtype" type="checkbox" value="pensionhelp">
+      <label for="check5">
+        Pension Credit
+      </label>
+    </div>
+
+<p class="form-block">or</p>
+
+    <div class="multiple-choice multiple-radio">
+      <input id="nope" name="passtype" type="checkbox" value="nohelp">
+      <label for="nope">
+        No, none of these benefits
+
+      </label>
+    </div>
+
+
+  </fieldset>
+<br><br>
+        <div class="form-group">
+          <input class="button" type="submit" value="Next">
+        </div>
+      </form>
+          
+    </div>
+      
+  </div>
+  
+</main>
+
+{% endblock %}
+

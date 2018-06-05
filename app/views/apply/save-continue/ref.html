@@ -11,37 +11,45 @@
   <div class="grid-row">
     <div class="column-two-thirds">
 
-      <h1 class="heading-large">
-        Your application number is
-      </h1>
+                    <header class="page-header">
+                <p class="page-header--sub heading-secondary"><span class="visuallyhidden">This section is </span>Save your details</p>
+                 {% if thirdparty %}
+                <h1 class="page-header--lede heading-large">Does {{firstname}}'s Universal Credit include a payment for any of these?</h1>
+                {% else %}
+                <h1 class="page-header--lede heading-large">Your application number is</h1>
+                 {% endif %}
+                  </header>
+
+  
 
       <div class="panel panel-border-wide claim-ref">
-        <h1 class="heading-xlarge">1Q3 4T6 7K9</h1>
+        <h1 class="heading-xlarge">k5gn v78j</h1>
       </div>
 
-      <p>You will need this number if you save your application and come back to it later.</p>
+      <p>You will need this number if you save your application and come back to it later. </p>
 
-      <p><a href="">Print this page</a></p>
+<!--       <p><a href="">Print this page</a></p> -->
 
-      <form action="ref-email-handler" method="get" class="form">
-
+      <!-- <form method="get" action="../preapp/save-return-email-correct" class="form">
+<p>We will email a copy of your application number.</p>
         <div class="form-item-wrapper">
           <fieldset>
             <div class="form-group">
-              <label class="form-label-bold" for="email">
-                Email address (optional)
-              </label>
-              <p>Enter your email address and we will email a copy of your application number.</p>
-              <input type="text" id="email" name="email" class="form-control">
-            </div>
+            <label class="form-label-bold" for="user_email" >Email address (optional)</label>
+            <input class="form-control form-control-3-4" id="user_email" name="user_email" type="text" value="{{data['user_email']}}">
+          </div>
           </fieldset>
         </div>
 
-            <p>
-          <a class="button" href="#" id="next">Apply now</a>
-        </p>
+        <div class="form-group">
+          <input type="submit" class="button" value="Continue" />
+        </div>
 
-      </form>
+      </form> -->
+
+              <p>
+          <a class="button" href="mem-word" id="next">Next</a>
+        </p>
 
     </div>
 

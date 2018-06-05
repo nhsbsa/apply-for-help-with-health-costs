@@ -1,0 +1,67 @@
+{% extends "layout_bsa.html" %}
+ 
+
+{% block page_title %}
+  Help paying for NHS Costs prototype
+{% endblock %}
+
+{% block content %}
+
+
+<link href="/public/stylesheets/progress.css" media="screen" rel="stylesheet" type="text/css">
+<style>
+.phase-banner .phase-tag {
+    padding: 1.2px 5px 2px 5px;
+  }
+  .spacelarge {
+    margin-bottom: 40px;
+}
+</style>
+
+
+<main id="content" role="main">
+<!--     <div class="phase-banner">
+      <p>
+      <strong class="phase-tag">BETA</strong>
+      This is a new service 
+      <span> - your 
+      <a target="" href="#">feedback</a> 
+      will help us to improve it.</span>
+      </p>
+    </div> -->
+
+               <header class="page-header">
+            <p class="page-header--sub heading-secondary"><span class="visuallyhidden">This section is </span>Before you start</p>
+             {% if thirdparty %}
+            <h1 class="page-header--lede heading-large">Does {{firstname}} claim any benefits or tax credits?</h1>
+            {% else %}
+            <h1 class="page-header--lede heading-large">Application reference number</h1>
+             {% endif %}
+            </header>
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+        <div class="done-panel">
+        <span class="heading-secondary" style="color:white">Your reference number</span>
+        <h1 class="heading-xlarge" style="margin-top:0">k5gn-v78j</h1>
+              <h1 class="heading-large" style="margin-top: 0.5em">
+        
+        
+      </h1>
+      </div>
+
+
+
+      <p>You've started an application for help with NHS costs. To return to your application you'll need this reference number. </p>
+        <p>
+          <a class="button" href="save-return-memorable" id="next">Next</a>
+        </p>
+    </div>
+  </div>
+
+    </div>
+  </div>
+
+</main>
+
+{% endblock %}

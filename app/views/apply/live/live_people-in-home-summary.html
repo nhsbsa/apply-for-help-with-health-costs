@@ -1,0 +1,245 @@
+ {% extends "layout_bsa.html" %}
+
+{% block page_title %}
+  Help paying for NHS Costs prototype
+{% endblock %}
+
+{% block content %}
+
+<style>
+  .check-your-answers td {
+    font-size: 19px;
+    line-height: 1.31579;
+}
+.check-your-answers td {
+    font-weight: 400;
+    text-transform: none;
+    line-height: 1.25;
+    vertical-align: top;
+}
+.bold {
+  font-weight: 700;
+}
+</style>
+
+<main id="content" role="main">
+  <a href="javascript:history.go(-1)" class="link-back">Back</a>
+
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+
+          <header class="page-header">
+            <p class="page-header--sub heading-secondary"><span class="visuallyhidden">This section is </span>Apply with NHS costs</p>
+            <h1 class="page-header--lede heading-large">Check your answers</h1>
+          </header>
+
+<!-- <p class="panel panel-border-wide">You’re applying for help with NHS costs on behalf of:</p> -->
+<table class="check-your-answers">
+
+    <thead>
+      <tr>
+        <th colspan="2">
+          <h2 class="heading-medium" style="margin-top: 0em">
+            Person 1
+          </h2>
+        </th>
+        <th>
+        </th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr>
+        <td>
+          Name
+        </td>
+        <td class="bold">
+          Bob
+        </td>
+        <td class="change-answer">
+          <a href="#">
+            Change <span class="visuallyhidden">Type of property you live in</span>
+          </a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          Boarder or a lodger
+        </td>
+        <td class="bold">
+         No
+        </td>
+        <td class="change-answer">
+          <a href="#">
+            Change <span class="visuallyhidden">if you get housing benefits</span>
+          </a>
+        </td>
+      </tr>
+            <tr>
+        <td>
+          Full-time student
+        </td>
+        <td>
+          No
+        </td>
+        <td class="change-answer">
+          <a href="#">
+            Change <span class="visuallyhidden">prefered contact method</span>
+          </a>
+        </td>
+      </tr>
+       <tr>
+        <td>
+          Claiming benefits
+        </td>
+        <td>
+          No
+        </td>
+        <td class="change-answer">
+          <a href="#">
+            Change <span class="visuallyhidden">prefered contact method</span>
+          </a>
+        </td>
+      </tr>
+       <tr>
+        <td>
+          Blind or severly sight impaired
+        </td>
+        <td>
+          No
+        </td>
+        <td class="change-answer">
+          <a href="#">
+            Change <span class="visuallyhidden">prefered contact method</span>
+          </a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          Working over 16 hours a week
+        </td>
+        <td>
+          Yes
+        </td>
+        <td class="change-answer">
+          <a href="#">
+            Change <span class="visuallyhidden">prefered contact method</span>
+          </a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          Wages
+        </td>
+        <td class="bold">
+          Monthly
+        </td>
+        <td class="change-answer">
+          <a href="#">
+            Change <span class="visuallyhidden">email address</span>
+          </a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          Wage amount
+        </td>
+        <td class="bold">
+          £225.98
+        </td>
+        <td class="change-answer">
+          <a href="#">
+            Change <span class="visuallyhidden">Producer name</span>
+          </a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <table class="check-your-answers">
+
+    <thead>
+      <tr>
+        <th colspan="2">
+          <h2 class="heading-medium">
+            Person 2
+          </h2>
+        </th>
+        <th>
+        </th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr>
+        <td>
+          Name
+        </td>
+        <td class="bold">
+          Bobby
+        </td>
+        <td class="change-answer">
+          <a href="#">
+            Change <span class="visuallyhidden">Type of property you live in</span>
+          </a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          Boarder or a lodger
+        </td>
+        <td class="bold">
+         Yes
+        </td>
+        <td class="change-answer">
+          <a href="#">
+            Change <span class="visuallyhidden">if you get housing benefits</span>
+          </a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          Paying board
+        </td>
+        <td class="bold">
+          Weekly
+        </td>
+        <td class="change-answer">
+          <a href="#">
+            Change <span class="visuallyhidden">email address</span>
+          </a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          Board amount
+        </td>
+        <td class="bold">
+          £76.00
+        </td>
+        <td class="change-answer">
+          <a href="#">
+            Change <span class="visuallyhidden">Producer name</span>
+          </a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+       
+
+<br><br>
+        <p>
+          <a class="button" href="/apply/task-list/task-list_9" id="next">Next</a>
+        </p>
+
+
+  </div>
+  </div>
+  </div>
+
+
+
+</main>
+
+{% endblock %}

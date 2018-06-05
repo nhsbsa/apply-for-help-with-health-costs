@@ -1,0 +1,94 @@
+{% extends "layout_bsa.html" %}
+ 
+{% block page_title %}
+  Help paying for NHS Costs prototype
+{% endblock %}
+
+{% block content %}
+
+<style>
+.report-a-problem-toggle {
+     margin-top: 2em;
+    font-size: 16px;
+    line-height: 1.25;
+  }
+.report-a-problem-toggle a {
+
+    color: #6f777b !important;
+    text-decoration: underline !important;
+  }
+    </style>
+
+<main id="content" role="main">
+  <a href="javascript:history.go(-1)" class="link-back">Back</a>
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+
+          <header class="page-header">
+            <p class="page-header--sub heading-secondary"><span class="visuallyhidden">This section is </span> People who live with you</p>
+  
+            <h1 class="page-header--lede heading-large">Is {first name} any of these?</h1>
+            </header>
+
+      <p class="body-text">Select all that apply</p>
+      <form class="form" action="deptype-handler" id="contact-boxes">
+
+  <fieldset>
+
+    <legend class="visually-hidden">Is {first name} any of these?</legend>
+
+    <div class="multiple-choice multiple-radio">
+      <input id="ftstudent" name="deptype" type="checkbox" value="ftstudenthelp">
+      <label for="ftstudent">
+        A full-time student
+      </label>
+    </div>
+
+    <div class="multiple-choice multiple-radio">
+      <input id="benefits" name="deptype" type="checkbox" value="helpben">
+      <label for="benefits">
+        Claiming benefits
+      </label>
+    </div>
+
+    <div class="multiple-choice multiple-radio">
+      <input id="blind" name="deptype" type="checkbox" value="blindhelp">
+      <label for="blind">
+        Registered blind or severly sight impaired
+      </label>
+    </div>
+            
+    <div class="multiple-choice multiple-radio">
+      <input id="work" name="deptype" type="checkbox" value="workhelp">
+      <label for="work">
+        Working on average for 16 hours or more
+      </label>
+    </div>
+
+<p class="form-block">or</p>
+
+    <div class="multiple-choice multiple-radio">
+      <input id="nope" name="deptype" type="checkbox" value="nohelp">
+      <label for="nope">
+        No, none of these
+
+      </label>
+    </div>
+
+
+  </fieldset>
+<br><br>
+        <div class="form-group">
+          <input class="button" type="submit" value="Next">
+        </div>
+      </form>
+          
+    </div>
+      
+  </div>
+  
+</main>
+
+{% endblock %}
+
