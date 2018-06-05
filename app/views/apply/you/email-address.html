@@ -22,28 +22,32 @@
 
   <p>We'll only contact you about this application.</p>
 
-
+<form method="get" action="about-you-summary" class="form">
 
       <form>
         <legend class="visuallyhidden">What’s your email address?</legend>
-        <div class="form-group">
-         
-            <span class="form-hint" id="hint-email"></span>
-            <input class="form-control" id="email" type="email">
-        </div>
+
+
+
+          <div class="form-group">
+            <label class="form-label-bold" for="user_email" >Email address</label>
+            <input class="form-control form-control-3-4" id="user_email" name="user_email" type="text" value="{{data['user_email']}}">
+          </div>
 
 
   <a class="summary" href="about-you-summary">I don't have an email address</a>
 
 <br><br>
-                <p>
-          <a class="button" href="about-you-summary" id="next">Next</a>
-        </p>
 
+        <div class="form-group">
+          <input type="submit" class="button" value="Next" />
+        </div>
+
+      </form>
 
 <!--         <p class="navigation"><a class="cancel" href="start">Cancel</a></p> -->
 
-      </form>
+
       
     </div>
     

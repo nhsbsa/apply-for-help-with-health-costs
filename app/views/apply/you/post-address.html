@@ -21,37 +21,29 @@
              {% endif %}
             </header>
 
- 
-      <form action="address-c-handler" method="get" class="form">
+    
+       <form action="post-address-confirmation" method="post" class="form">
 
-      <div class="form-group">
-        <label class="form-label" for="lineone">
-          Address line 1
-        </label>
-        <input class="form-control" id="registration-number" name="address-lineone" type="text" value="{{data['address-lineone']}}">
-      </div>
-        
-      <div class="form-group">
-              <label class="form-label" for="lineone">
-          Address line 2
-        </label>
-        <input class="form-control"  id="registration-number" name="address-linetwo" type="text" value="{{data['address-linetwo']}}">
-      </div>
+        <div class="form-group">
+            <label class="form-label-bold" for="registration-number">Address line 1</label>
+            <input class="form-control" id="registration-number-address" name="vehicle-registration7" type="text" value="{{data['vehicle-registration7']}}">
+        </div>
+        <div class="form-group">
+            <label class="form-label-bold" for="registration-number">Address line 2</label>
+            <input class="form-control" id="registration-number-address2" name="vehicle-registration8" type="text" value="{{data['vehicle-registration8']}}">
+        </div>
+       <div class="form-group">
+            <label class="form-label-bold" for="registration-number">Town or city</label>
+            <input class="form-control" id="registration-number-address3" name="vehicle-registration9" type="text" value="{{data['vehicle-registration9']}}">
+        </div>
+        <div class="form-group">
+            <label class="form-label-bold" for="registration-number">Post code</label>
+            <input class="form-control form-control-1-4"" id="registration-number-address4" name="vehicle-registration10" type="text" value="{{data['vehicle-registration10']}}">
+        </div>
 
-      <div class="form-group">
-        <label class="form-label" for="town">
-          Town or city
-        </label>
-        <input class="form-control" id="town" name="town" type="text">
-      </div>
-      
-        
-      <div class="form-group">
-        <label class="form-label" for="postcode">
-          Post code
-        </label>
-        <input class="form-control form-control-1-4"  id="registration-number" name="address-postcode" type="text" value="{{data['address-postcode']}}">
-      </div>
+
+
+
 
                  <details role="group">
               <summary><span class="summary" role="button" aria-controls="details-content-0" aria-expanded="true">
@@ -81,11 +73,11 @@ I don't know what address to use
         
        </fieldset>
 </details>
-
-     <br>
-<p>
-          <a class="button" href="post-address-confirmation" id="next">Next</a>
-        </p>
+<br><br>
+        <div class="form-group">
+          <input type="submit" class="button" value="Next">
+        </div>
+ 
 
 
   

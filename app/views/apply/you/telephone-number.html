@@ -45,13 +45,15 @@
   <p>You can give a mobile or landline number. We'll only contact you about this application.</p>
 
 
-  <form>
+<form method="get" action="email-address" class="form">
 
-    <div class="form-item-wrapper">
 
-<div class="form-group" style="margin-bottom: 1em">
-     <label for="phone" class="visuallyhidden" aria-describedby="hint-phone">What is your telephone number?</label></div>
-  <input class="form-control" id="telephone-number" name="telephone-number" type="text" style="margin-bottom:0.5em">
+
+
+            <div class="form-group" style="margin-bottom: 0.5em">
+            <label class="form-label-bold" for="user_email" >Telephone number</label>
+            <input class="form-control form-control-3-4" id="user_telephone" name="user_telephone" type="text" value="{{data['user_telephone']}}" style="margin-bottom:0.5em">
+          </div>
 
          <div class="multiple-choice multiple-radio">
 
@@ -83,18 +85,20 @@ I need to tell you more about how to use my phone number
     
 <!--     <p class="navigation"><a class="cancel" href="start">Cancel</a></p> -->
 
-  </form>
+
   <div class="form-group">
    <p style="margin-top:2em; margin-bottom: 0em">
       <a class="summary" href="email-address">I don't have a telephone number</a>
       </p>
 </div>
 
-  <div class="form-group" style="margin-top: 0em">
-   <p>
-          <a class="button" href="email-address" id="next">Next</a>
-        </p>
+<br>
+
+        <div class="form-group">
+          <input type="submit" class="button" value="Next" />
         </div>
+
+      </form>
 
     </div>
 
