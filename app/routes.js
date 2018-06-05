@@ -507,7 +507,7 @@ router.get(/telephone-c-handler/, function (req, res) {
       if (req.query.hben === 'yes') {
         res.redirect('housing-benefit-all');
       } else {
-        res.redirect('live_rent-frequency');
+        res.redirect('student/live_rent_student-temp');
       }
     });
 
@@ -677,9 +677,26 @@ router.get(/telephone-c-handler/, function (req, res) {
         // student living away
     router.get(/awaystudent-handler/, function (req, res) {
       if (req.query.moved == 'yes') {
+        res.redirect('live_rent_student-summer');
+      } else {
+        res.redirect('../live_rent-frequency');
+      }
+    });
+
+            // student living away
+    router.get(/summer-handler/, function (req, res) {
+      if (req.query.moved == 'yes') {
+        res.redirect('live_rent_student-summer-living-in-property');
+      } else {
+        res.redirect('live_rent_student-rent-frequency');
+      }
+    });
+                // student living away
+    router.get(/summeraway-handler/, function (req, res) {
+      if (req.query.moved == 'yes') {
         res.redirect('live_rent_student-rent-frequency');
       } else {
-        res.redirect('../lis-check-list-3');
+        res.redirect('../live_services2');
       }
     });
 
@@ -688,7 +705,7 @@ router.get(/telephone-c-handler/, function (req, res) {
       if (req.query.regular== 'yes') {
         res.redirect('live_rent_student-regular-rent-amount');
       } else {
-        res.redirect('../lis-check-list-3');
+        res.redirect('live_rent_student-irregular-rent-amount');
       }
     });
       //reg payment
