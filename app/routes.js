@@ -989,7 +989,7 @@ var benType;
       if (req.query.peeps === 'yes') {
         res.redirect('live_live-name');
             } else {
-                res.redirect('live_people-in-home-summary');
+                res.redirect('live_people-in-home-summary-student');
       }
     });
                   // others in home
