@@ -14,7 +14,7 @@
 
 
        <header class="page-header">
-          <p class="page-header--sub heading-secondary"><span class="visuallyhidden">This section is </span>Where you live</p>
+          <p class="page-header--sub heading-secondary"><span class="visuallyhidden">This section is </span>About where you live</p>
            {% if thirdparty %}
           <h1 class="page-header--lede heading-large">Is {firstname} a student living away from home?</h1>
           {% else %}
@@ -22,25 +22,60 @@
           {% endif %}
       </header>
 
-  <form action="tenancydate-handler" method="get" class="form">
-<div class="form-group">
-  <label class="form-label" for="firstame">Start date</label>
-  <input class="form-control" id="firstname" name="firstname" type="text">
-</div>
-<div class="form-group">
-  <label class="form-label" for="middlename">End date</label>
-  <input class="form-control" id="middlename" name="firstname" type="text">
-</div>
 
+      <form action="live_rent_student-amount-total" method="post" class="form">
 
-           <div class="form-group">
-            <input class="button" type="submit"  value="Next">
-          </div>
-               <p>
-        </p>
-   <!--  <p class="navigation"><a class="cancel" href="../lis-check-list">Save and come back later</a></p> -->
-  </form>
-    </div>
+<div class="form-group">
+    <fieldset>
+      <legend>
+        <span class="form-label-bold">
+          Start date
+        </span>
+      </legend>
+      <div class="form-date">
+        <div class="form-group form-group-day">
+          <label class="form-label" for="registration-number-day">Day</label>
+          <input class="form-control" id="registration-number-day" name="vehicle-registration" pattern="[0-9]*" type="number" value="{{data['vehicle-registration']}}">
+        </div>
+        <div class="form-group form-group-month">
+          <label class="form-label" for="registration-number-month">Month</label>
+          <input class="form-control" id="registration-number-month" name="vehicle-registration2" pattern="[0-9]*" type="number" value="{{data['vehicle-registration2']}}">
+        </div>
+        <div class="form-group form-group-year">
+          <label class="form-label" for="registration-number-year">Year</label>
+          <input class="form-control" id="registration-number-year" name="vehicle-registration3" pattern="[0-9]*" type="number" value="{{data['vehicle-registration3']}}">
+        </div>
+      </div>
+    </fieldset>
+  </div>
+<div class="form-group">
+    <fieldset>
+      <legend>
+        <span class="form-label-bold">
+          End date
+        </span>
+      </legend>
+      <div class="form-date">
+        <div class="form-group form-group-day">
+          <label class="form-label" for="registration-number-day2">Day</label>
+          <input class="form-control" id="registration-number-day2" name="vehicle-registration4" pattern="[0-9]*" type="number" value="{{data['vehicle-registration4']}}">
+        </div>
+        <div class="form-group form-group-month">
+          <label class="form-label" for="registration-number-month2">Month</label>
+          <input class="form-control" id="registration-number-month2" name="vehicle-registration5" pattern="[0-9]*" type="number" value="{{data['vehicle-registration5']}}">
+        </div>
+        <div class="form-group form-group-year">
+          <label class="form-label" for="registration-number-year3">Year</label>
+          <input class="form-control" id="registration-number-year3" name="vehicle-registration6" pattern="[0-9]*" type="number" value="{{data['vehicle-registration6']}}">
+        </div>
+      </div>
+    </fieldset>
+  </div>
+            <div class="form-group">
+          <input type="submit" class="button" value="Continue">
+        </div>
+        </form>
+        </div>
     </div>
 </main>
 

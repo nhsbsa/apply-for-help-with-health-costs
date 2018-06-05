@@ -694,7 +694,7 @@ router.get(/telephone-c-handler/, function (req, res) {
                 // student living away
     router.get(/summeraway-handler/, function (req, res) {
       if (req.query.moved == 'yes') {
-        res.redirect('live_rent_student-rent-frequency');
+        res.redirect('live_rent_student_tenancy-dates');
       } else {
         res.redirect('../live_services2');
       }
