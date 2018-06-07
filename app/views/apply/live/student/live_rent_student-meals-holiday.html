@@ -25,10 +25,10 @@
              {% if thirdparty %}
             <h1 class="page-header--lede heading-large">Which meals are included in {firstname}'s rent?</h1>
             {% else %}
-            <h1 class="page-header--lede heading-large">Which meals are included in your rent?</h1>
+            <h1 class="page-header--lede heading-large">When are your meals included in your rent?</h1>
              {% endif %}
             </header>
-
+<p class="form-hint">Select all that apply.</p>
       <form action="" method="get" class="form">
                  <div class="form-group">
           
@@ -38,26 +38,15 @@
               Which meals are included in your rent?
             </legend>
 
-            <div class="multiple-choice">
-              <input id="yes" type="radio" name="yes" value="yes">
-              <label for="yes">Breakfast only</label>
-            </div>
-
-          <div class="multiple-choice" >
-            <input id="penCredit" type="radio" name="benefits" value="penCredit">
-            <label for="penCredit" id="penCredit" class=" block-label">
-
-              <p class="list-discription">Any meal other than breakfast</p>
-<!--               <span class="font-xsmall" >This might be meals like lunch or dinner.
-              </span> -->
-            </label>
+          <div class="multiple-choice multiple-radio">
+            <input id="phone" name="phone" type="checkbox" value="true">
+            <label for="phone">Term time</label>
           </div>
 
-            <div class="multiple-choice">
-              <input id="yes" type="radio" name="yes" value="yes">
-              <label for="yes">3 meals a day for a full week</label>
-            </div>
-            
+          <div class="multiple-choice multiple-radio">
+            <input id="phone" name="phone" type="checkbox" value="true">
+            <label for="phone">During holidays</label>
+          </div>
           </fieldset>  
           
         </div>
@@ -68,7 +57,7 @@
   <div class="form-item-wrapper">
     <div class="form-group">
       
-        <a href="student/live_rent_student-meals-holiday" class="button " id="next">Next</a>
+        <a href="../live_services2" class="button " id="next">Next</a>
       
     </div>
   </div>

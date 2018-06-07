@@ -21,12 +21,14 @@ s{% extends "layout_bsa.html" %}
                  {% if thirdparty %}
                 <h1 class="page-header--lede heading-large">Does {{firstname}}'s Universal Credit include a payment for any of these?</h1>
                 {% else %}
-                <h1 class="page-header--lede heading-large">Does your Universal Credit include a payment for any of these?</h1>
+                <h1 class="page-header--lede heading-large">Does your Universal Credit include any of these?</h1>
                  {% endif %}
                   </header>
                        <ul class="list-bullet">
-          <li>a child or young person who lives with you</li>
-          <li>a disability or health condition that makes it hard for {{partnerOrText}} to work  - this is called limited capability for work</li>
+          <li>payment for a child or young person who lives with you</li>
+          <li>limited capability for work</li>
+          <li>limited capability for work and work related activity</li>
+<!--           <li>a disability or health condition that makes it hard for {{partnerOrText}} to work  - this is called limited capability for work</li> -->
       </ul>
            
 

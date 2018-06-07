@@ -900,6 +900,13 @@ var benType;
       }
 });
 
+          router.get(/esa2-handler/, function (req, res) {
+      if (req.query.esa == 'contesa') {
+      res.redirect('benefits_benefits-amount-esa'); 
+      } else {
+        res.redirect('full-exemption-benefits-esa');
+      }
+});
 
     // child tax credit handler
           router.get(/taxcredit-income-handler/, function (req, res) {
@@ -992,6 +999,14 @@ var benType;
                 res.redirect('live_people-in-home-summary-student');
       }
     });
+                        // others in home
+      router.get(/tenant-handler/, function (req, res) {
+      if (req.query.tenant === 'yes') {
+        res.redirect('live_who-recap2');
+            } else {
+                res.redirect('live_boarder');
+      }
+    });
                   // others in home
       router.get(/dudes-handler/, function (req, res) {
       if (req.query.dudes === 'yes') {
@@ -1070,11 +1085,13 @@ var benType;
                         // loan
       router.get(/educationloan-handler/, function (req, res) {
       if (req.query.loantype == 'loanhelp') {
-        res.redirect('test1');
+        res.redirect('student-loan');
             } else if (req.query.loantype == 'nhshelp') {
-              res.redirect('test2');
+              res.redirect('term-dates');
             } else if (req.query.loantype == 'hardshiphelp') {
-              res.redirect('test3');
+              res.redirect('bursaries');
+            } else if (req.query.loantype == 'overseashelp') {
+              res.redirect('overseas');
             } else {
               res.redirect('term-dates');
       }
@@ -1090,16 +1107,32 @@ var benType;
               res.redirect('loan-eng-amount');
       }
     });
+                                    // alevel or higher
+      router.get(/finalyear-handler/, function (req, res) {
+      if (req.query.finalyear == 'yes') {
+        res.redirect('final-year-date');
+            } else {
+              res.redirect('uni-autocomplete');
+      }
+    });
 
                               // parent student money
       router.get(/parenmoney-handler/, function (req, res) {
       if (req.query.parenmoney == 'yes') {
+        res.redirect('parent-assessed');
+            } else {
+              res.redirect('other-money');
+      }
+    });
+                                  // parent student money
+      router.get(/parenassessed-handler/, function (req, res) {
+      if (req.query.parenass == 'yes') {
         res.redirect('parent-money-amount');
             } else {
               res.redirect('other-money');
       }
     });
-    
+
      // parent student money
       router.get(/studentother-handler/, function (req, res) {
       if (req.query.studentother == 'yes') {
