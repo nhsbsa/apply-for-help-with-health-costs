@@ -44,50 +44,30 @@
   </style>
 
 <main id="content" role="main">
-  <a href="javascript:history.go(-1)" class="link-back">Back</a>
+    <a class="link-back" href="javascript:history.go(-1)">Back</a>
 
-<div class="grid-row">
-        <div class="column-two-thirds">
+    <div class="grid-row">
+      <div class="column-two-thirds">
+        <header class="page-header">
+          <p class="page-header--sub heading-secondary"><span class="visuallyhidden">This section is</span> People who live with you</p>
+          <h1 class="page-header--lede heading-large">What you need</h1>
+        </header><!-- extra formatting for what you need sections -->
+      </div>
+    </div>
 
-               <header class="page-header">
-            <p class="page-header--sub heading-secondary"><span class="visuallyhidden">This section is </span>People who live with you</p>
-
-            <h1 class="page-header--lede heading-large">What you need</h1>
-
-            </header>
-
-
-  <!-- extra formatting for what you need sections -->
-                    </div>
-                </div>
-                <div class="grid-row what-you-need">
-
-                    <div class="column-one-third">
-                        <div class="savemessage">
-    <h2 class="heading-small">Automatic saving</h2>
-    <p>Your information is saved automatically. If you sign out, you’ll have 7 days to complete your application.</p>
-</div>
-                    </div>
-
-  <div class="column-two-thirds">
-  
-
-            <p>In this section, we will ask you:</p>
-            <ul class="list list-bullet">
-              <li>if you have children living with you</li>
-              <li>if anyone else lives with you, and whether they work or get benefits</li>
-            </ul>
-
-        <p>
-          <a class="button" href="children-under-20" id="next">Next<span class="visuallyhidden"> People who live with you</span></a>
-          </p>
-
-        </div>
+    <div class="grid-row what-you-need">
+      <div class="column-two-thirds">
+        <p>In this section, we will ask you:</p>
+        <ul class="list list-bullet">
+          <li>if you have children living with you</li>
+          <li>if anyone else lives with you, and whether they work or get benefits</li>
+        </ul>
+        <p><a class="button" href="children-under-20" id="next">Next <span class="visuallyhidden">People who live with you</span></a></p>
+      </div>
 
     </div>
 
-  
-</main>
+  </main>
 
 
 {% endblock %}
