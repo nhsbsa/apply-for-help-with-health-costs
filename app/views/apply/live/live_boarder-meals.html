@@ -42,15 +42,14 @@
         
 
     <header class="page-header">
-                <h1 class="page-header--lede heading-large">Is {name} a joint tenant or joint owner of the property you live in?</h1>
+                <h1 class="page-header--lede heading-large">Does {first name}’s rent or board include any meals?</h1>
                 <p class="page-header--sub heading-secondary"><span class="visuallyhidden">This section is </span>People who live with you</p>
   </header>
 
-<p>They are joint tenants if they are named on the tenancy agreement.</p>
  <div class="grid-row">
         <div class="column-two-thirds">
 
-             <form action="tenant-handler" method="get" class="form">
+             <form action="tenant-meals" method="get" class="form">
 
 
        <div class="form-group">
@@ -61,12 +60,12 @@
             </legend>
 
             <div class="multiple-choice">
-              <input id="yes" type="radio" name="tenant" value="yes">
+              <input id="yes" type="radio" name="mealsboarder" value="yes">
               <label for="yes">Yes</label>
             </div>
 
             <div class="multiple-choice">
-              <input id="no" type="radio" name="tenant" value="no">
+              <input id="no" type="radio" name="mealsboarder" value="no">
               <label for="no">No</label>
             </div>
             

@@ -10,39 +10,31 @@
   <a href="javascript:history.go(-1)" class="link-back">Back</a>
 
   <div class="grid-row">
-      <div class="column-two-thirds">
-
+    <div class="column-two-thirds">
 
       <header class="page-header">
           <p class="page-header--sub heading-secondary"><span class="visuallyhidden">This section is</span>People who live with you</p>
-          <h1 class="page-header--lede heading-large">Do you have any children living with you who you support financially?</h1>
+          <h1 class="page-header--lede heading-large">Do you know how much they get paid?</h1>
         </header>
 
+<p class="panel panel-border-wide">You don’t have to tell us, but you could get more help if they don’t earn very much.</p>
 
-
-<p>They must be either:</p>
-<ul class="list-bullet">
-  <li>Under 16</li>
-  <li>16 to 19 and in unpaid training or full-time education (studying for a qualification no higher than an A level or equivalent) <br>
- <!--   <span class="strong">Lindsay note:</span> *No higher than A-level or equiv. like level 4 NVQs or a degree* --></li>
-</ul>
-<br>
-  <form>
+  <form action="nondep-working16plus" method="get" class="form">
 
        <div class="form-group">
           
           <fieldset class="inline">
             <legend class="visually-hidden">
-              Do you live with a partner?
+               Do you know how much they get paid?
             </legend>
 
             <div class="multiple-choice">
-              <input id="yes" type="radio" name="children" value="yes">
+              <input id="yes" type="radio" name="boarder" value="yes">
               <label for="yes">Yes</label>
             </div>
 
             <div class="multiple-choice">
-              <input id="no" type="radio" name="children" value="no">
+              <input id="no" type="radio" name="boarder" value="no">
               <label for="no">No</label>
             </div>
             
@@ -50,10 +42,9 @@
           
         </div>
         
-        <p>
-          <a class="button" href="live_who-recap-student" id="next">Next</a>
-        </p>
-
+          <div class="form-group">
+            <input class="button" type="submit"  value="Next">
+          </div>
 
       </form>
     </div>

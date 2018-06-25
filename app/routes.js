@@ -1007,6 +1007,16 @@ var benType;
                 res.redirect('live_boarder');
       }
     });
+
+                              // borader meals
+      router.get(/tenant-meals/, function (req, res) {
+      if (req.query.mealsboarder === 'yes') {
+        res.redirect('live_who-recap2');
+            } else {
+                res.redirect('live_who-recap2');
+      }
+    });
+
                   // others in home
       router.get(/dudes-handler/, function (req, res) {
       if (req.query.dudes === 'yes') {
@@ -1024,6 +1034,17 @@ var benType;
                 res.redirect('live_nondep-checkbox');
       }
     });
+
+                        // nondeps working 16 hrs plus (copied from boarder-handler)
+      router.get(/nondep-working16plus/, function (req, res) {
+      if (req.query.boarder === 'yes') {
+        res.redirect('live_nondep-working-frequency');
+            } else {
+                res.redirect('live_who-recap2');
+      }
+    });
+
+
                                     // passported ben non dep
       router.get(/passben-handler/, function (req, res) {
       if (req.query.passben == 'yes') {
@@ -1162,7 +1183,8 @@ var benType;
             } else if (req.query.deptype == 'helpben') {
               res.redirect('live_nondep-passport-checkbox');
             } else if (req.query.deptype == 'workhelp') {
-              res.redirect('live_nondep-working-frequency');
+              //res.redirect('live_nondep-working-frequency');
+              res.redirect('live_nondep-working-16hrsplus');
             } else {
               res.redirect('live_who-recap2');
       }
