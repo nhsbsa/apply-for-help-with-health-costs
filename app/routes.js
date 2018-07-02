@@ -738,12 +738,12 @@ router.get(/benefits-handler/, function (req, res) {
 router.get(/getuc-handler/, function (req, res) {
       if (req.query.getuc == 'yes') {
       //res.redirect('job'); 
-      res.redirect('live_nondep-money-comingin-howmuch'); 
+      res.redirect('live_nondep-benefits-age'); 
       } else if (req.query.getuc == 'no') {
         res.redirect('live_who-recap-student');
       //res.redirect('benefits-type-question'); 
       } else {
-      res.redirect('live_nondep-money-comingin-howmuch');
+      res.redirect('live_nondep-benefits-age');
       }
 });
 
