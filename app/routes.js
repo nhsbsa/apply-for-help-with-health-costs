@@ -734,14 +734,16 @@ router.get(/benefits-handler/, function (req, res) {
       }
 });
 
-
+//live_nondep-money-comingin
 router.get(/getuc-handler/, function (req, res) {
       if (req.query.getuc == 'yes') {
-      res.redirect('job'); 
+      //res.redirect('job'); 
+      res.redirect('live_nondep-money-comingin-howmuch'); 
       } else if (req.query.getuc == 'no') {
-      res.redirect('benefits-type-question'); 
+        res.redirect('live_who-recap-student');
+      //res.redirect('benefits-type-question'); 
       } else {
-        res.redirect('benefits-type-question');
+      res.redirect('live_nondep-money-comingin-howmuch');
       }
 });
 
@@ -1183,8 +1185,9 @@ var benType;
             } else if (req.query.deptype == 'helpben') {
               res.redirect('live_nondep-passport-checkbox');
             } else if (req.query.deptype == 'workhelp') {
+              res.redirect('live_nondep-money-comingin');
               //res.redirect('live_nondep-working-frequency');
-              res.redirect('live_nondep-working-16hrsplus');
+              //res.redirect('live_nondep-working-16hrsplus');
             } else {
               res.redirect('live_who-recap2');
       }
@@ -1197,7 +1200,12 @@ var benType;
         res.redirect('live_nondep-benefits-disability');
             } else if (req.query.passtype == 'pensionhelp') {
               res.redirect('live_nondep-benefits-disability');
-            } else {
+            } else if (req.query.passtype == 'passportedhelp-esa') {
+              res.redirect('live_nondep-esa-group');
+             } else if (req.query.passtype == 'passportedhelp-uc') {
+              res.redirect('live_nondep-uc-earnings');
+            }
+            else {
               res.redirect('live_nondep-benefits-age');
       }
     });

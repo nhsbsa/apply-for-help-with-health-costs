@@ -1,0 +1,71 @@
+{% extends "layout_bsa.html" %}
+ 
+
+{% block page_title %}
+  Help paying for NHS Costs prototype
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+<a href="javascript:history.go(-1)" class="link-back">Back</a>
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+
+               <header class="page-header">
+            <p class="page-header--sub heading-secondary"><span class="visuallyhidden">This section is </span>People who live with you</p>
+             {% if thirdparty %}
+            <h1 class="page-header--lede heading-large">Do you know how much money {{firstname}} has coming in every week?</h1>
+            {% else %}
+            <h1 class="page-header--lede heading-large">Do you know how much money {first name} has coming in every week?</h1>
+             {% endif %}
+            </header>
+
+            <p>This could include wages, pension payments or any other money they get.</p>
+
+            <p class="panel panel-border-wide">You don’t have to tell us, but you could get more help if they don’t have much coming in.</p>
+
+      <form action="getuc-handler" method="get" class="form">
+        
+        <div class="form-group">
+          
+          <fieldset>
+            <legend class="visually-hidden">
+              Dis they have any earnings in their last assesment period?
+            </legend>
+
+            <div class="multiple-choice">
+              <input id="yes" type="radio" name="getuc" value="yes">
+              <label for="yes">Yes</label>
+            </div>
+
+            <div class="multiple-choice">
+              <input id="notyet" type="radio" name="getuc" value="notyet">
+              <label for="notyet">No</label>
+            </div>
+            
+          </fieldset>  
+          
+        </div>
+        
+          <div class="form-group">
+            <input class="button" type="submit"  value="Next">
+          </div>
+
+      </form>
+
+      </div>
+      </div>
+
+
+</main>
+
+
+{% endblock %}
+
+
+
+
+
+

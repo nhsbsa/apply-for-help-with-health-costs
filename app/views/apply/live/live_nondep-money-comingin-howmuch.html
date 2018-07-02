@@ -1,0 +1,59 @@
+ {% extends "layout_bsa.html" %}
+
+{% block page_title %}
+  Help paying for NHS Costs prototype
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+  <a href="javascript:history.go(-1)" class="link-back">Back</a>
+
+ <div class="grid-row">
+    <div class="column-two-thirds">
+
+      <header class="page-header">
+          <p class="page-header--sub heading-secondary"><span class="visuallyhidden">This section is</span>People who live with you</p>
+          <h1 class="page-header--lede heading-large">How much does {first name} have coming in every week?</h1>
+        </header>
+
+<p>Don't include any money they get from:</p>
+<ul class="list-bullet">
+  <li>Attendance Allowance</li>
+  <li>Disability Living Allowance</li>
+  <li>Personal Independence Payment</li>
+  <li>Armed Forces Independence Payment</li>
+</ul>
+<br>
+
+<p>Include their earnings before tax and national insurance are taken off (gross pay) as well as any other income.</p>
+
+      <form action="" method="" class="form">
+          <fieldset>
+            <legend class="visually-hidden">
+How much does {first name} get paid {every week}?</legend>
+
+<p class="form-hint">The amount must include pence. For example, £250.00</p>
+
+<span class="heading-medium">£</span> <input class="form-control form-control-1-4" id="pay" type="text" name="ni-number">
+<br><br><br>
+<p>
+          <a class="button" href="live_nondep-benefits-age" id="next">Next</a>
+        </p>
+      
+<!-- 
+
+    <p class="navigation"><a class="cancel" href="../lis-home">Save and come back later</a></p> -->
+
+
+      </form>
+
+    </div>
+
+  </div>
+</main>
+
+
+
+{% endblock %}
+
