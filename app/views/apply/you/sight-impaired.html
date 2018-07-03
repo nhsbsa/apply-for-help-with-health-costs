@@ -1,0 +1,59 @@
+ {% extends "layout_bsa.html" %}
+
+{% block page_title %}
+  Help paying for NHS Costs prototype
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+  <a href="javascript:history.go(-1)" class="link-back">Back</a>
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+
+
+            <header class="page-header">
+                <h1 class="page-header--lede heading-large">Are you severely sight impaired or registered blind?</h1>
+                <p class="page-header--sub heading-secondary"><span class="visuallyhidden">This section is </span>Personal details</p>
+  </header>
+
+  <form action="" method="get" class="form">
+
+       <div class="form-group">
+          
+          <fieldset class="inline">
+            <legend class="visually-hidden">
+               Are they severely sight impaired or registered blind?
+            </legend>
+
+            <div class="multiple-choice">
+              <input id="yes" type="radio" name="nonDep" value="yes">
+              <label for="yes">Yes</label>
+            </div>
+
+            <div class="multiple-choice">
+              <input id="no" type="radio" name="nonDep" value="no">
+              <label for="no">No</label>
+            </div>
+            
+          </fieldset>  
+          
+        </div>
+        
+        <p>
+          <a class="button" href="personal-details-summary" id="next">Next</a>
+        </p>
+      </form>
+    </div>
+    </div>
+</main>
+
+{% endblock %}
+
+
+
+
+
+
+
