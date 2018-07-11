@@ -1024,7 +1024,7 @@ var benType;
       if (req.query.dudes === 'yes') {
         res.redirect('live_live-name');
             } else {
-                res.redirect('live_people-in-home-summary');
+                res.redirect('live_with-couple');
       }
     });
 

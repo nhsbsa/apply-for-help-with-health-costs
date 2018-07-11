@@ -1,0 +1,76 @@
+ {% extends "layout_bsa.html" %}
+
+{% block page_title %}
+  Help paying for NHS Costs prototype
+{% endblock %}
+
+{% block content %}
+
+<style>
+.h2 {
+ font-size:30px
+}
+</style>
+
+<main id="content" role="main">
+  <a href="javascript:history.go(-1)" class="link-back">Back</a>
+
+  <div class="grid-row">
+      <div class="column-two-thirds">
+
+
+      <header class="page-header">
+          <p class="page-header--sub heading-secondary"><span class="visuallyhidden">This section is</span>Before you start</p>
+          <h1 class="page-header--lede heading-large">You've told us that</h1>
+        </header>
+
+  <form>
+
+       <div class="form-group">
+          
+          <fieldset class="inline">
+            <legend class="visually-hidden">
+              Do you live with a partner?
+            </legend>
+
+                        <p>#</p>
+<ul class="list list-bullet">
+            <li>you live permanently in a care home</li>
+            <li>the council helps to pay for your care home</li>
+            
+</ul>
+          <h2 class="heading-medium">Is this correct?</h2>
+
+
+            <div class="multiple-choice">
+              <input id="yes" type="radio" name="children" value="yes">
+              <label for="yes">Yes</label>
+            </div>
+
+            <div class="multiple-choice">
+              <input id="no" type="radio" name="children" value="no">
+              <label for="no">No</label>
+            </div>
+            
+          </fieldset>  
+          
+        </div>
+        
+        <p>
+          <a class="button" href="live_who-recap-student" id="next">Next</a>
+        </p>
+
+
+      </form>
+    </div>
+    </div>
+</main>
+
+{% endblock %}
+
+
+
+
+
+
+

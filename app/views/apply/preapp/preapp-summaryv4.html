@@ -1,0 +1,56 @@
+ {% extends "layout_bsa.html" %}
+
+{% block page_title %}
+  Help paying for NHS Costs prototype
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+  <a href="javascript:history.go(-1)" class="link-back">Back</a>
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+
+          <header class="page-header">
+            <p class="page-header--sub heading-secondary"><span class="visuallyhidden">This is pre-application overview for </span>Apply for help with NHS costs</p>
+            <h1 class="page-header--lede heading-large">Check your answers</h1>
+          </header>
+
+<!-- <p class="panel panel-border-wide">You’re applying for help with NHS costs on behalf of:</p> -->
+    {% if thirdparty %}
+      <h2 class="heading-medium" style="margin-top:0; padding-top:0">{{firstname}}'s details</h3>
+    {% else %}
+    <h2 class="heading-medium" style="margin-top:0; padding-top:0">Check elibility</h3>
+        {% endif %}
+       
+       
+    <table id="review-table-one">
+  <tr>
+        <td>Permanently living in a care home</td>
+        <td class="bold">Yes</td>
+        <td><a href="">Change</a></td>
+      </tr>
+      <tr>
+        <td>Local Council helps pay for the care home</td>
+        <td class="bold">Yes</td>
+        <td><a href="">Change</a></td>
+      </tr>
+     
+    </table>
+
+<br><br>
+        <p>
+          <a class="button" href="../design-sprints/sprint21/check-list_contact" id="next">Next</a>
+        </p>
+
+
+  </div>
+  </div>
+  </div>
+
+
+
+</main>
+
+{% endblock %}
