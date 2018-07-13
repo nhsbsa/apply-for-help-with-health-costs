@@ -99,6 +99,42 @@ var thisYear = 2017;
         }
     });
 
+        // perm in care home
+    router.get(/confirmcarehome/, function (req, res) {
+      if (req.query.carehomeperm === 'yes') {
+        res.redirect('live_carehome-funded-who');
+      }
+       else {
+        res.redirect('live_carehome');
+      }
+    });
+
+
+            // perm in care home 2
+    router.get(/doyoucarehome/, function (req, res) {
+      if (req.query.permcarehome === 'yes') {
+        res.redirect('live_carehome_funded');
+      }
+       else {
+        res.redirect('../apply/preapp/partner');
+      }
+    });
+
+
+
+
+           // perm in care home which council pays
+    router.get(/whichcouncil/, function (req, res) {
+      if (req.query.localcouncil === 'yes') {
+        res.redirect('live_carehome-funded-who');
+      }
+       else {
+        res.redirect('../apply/preapp/partner');
+      }
+    });
+
+
+
     router.get(/asylum-handler/, function (req, res) {
       if (applicant.partner == true && req.query.asylum === 'yes') {  
         res.redirect('asylum-seeker-couple');

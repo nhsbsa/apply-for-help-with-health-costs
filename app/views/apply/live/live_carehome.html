@@ -18,25 +18,24 @@
           <h1 class="page-header--lede heading-large">Do you live permanently in a care home?</h1>
         </header>
 
+  
+ <form action="doyoucarehome" method="get" class="form">
 
 
-<p>Permanently in a care home is classed as having lived there <br>for 52 weeks or more.</p>
-  <form>
-
-       <div class="form-group">
+        <div class="form-group">
           
           <fieldset class="inline">
             <legend class="visually-hidden">
-              Do you live with a partner?
+                  Do you have more than £23,250 in savings, investments and properties?
             </legend>
 
             <div class="multiple-choice">
-              <input id="yes" type="radio" name="children" value="yes">
+              <input id="yes" type="radio" name="permcarehome" value="yes">
               <label for="yes">Yes</label>
             </div>
 
             <div class="multiple-choice">
-              <input id="no" type="radio" name="children" value="no">
+              <input id="no" type="radio" name="permcarehome" value="no">
               <label for="no">No</label>
             </div>
             
@@ -44,21 +43,15 @@
           
         </div>
         
-        <p>
-          <a class="button" href="live_who-recap-student" id="next">Next</a>
-        </p>
-
+          <div class="form-group">
+            <input class="button" type="submit"  value="Next">
+          </div>
 
       </form>
+
+
     </div>
     </div>
+
 </main>
-
 {% endblock %}
-
-
-
-
-
-
-
