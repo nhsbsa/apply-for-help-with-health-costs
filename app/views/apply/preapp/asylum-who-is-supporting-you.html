@@ -1,0 +1,89 @@
+{% extends "layout_bsa.html" %}
+ 
+{% block page_title %}
+  Help paying for NHS Costs prototype
+{% endblock %}
+
+{% block content %}
+
+<style>
+.report-a-problem-toggle {
+     margin-top: 2em;
+    font-size: 16px;
+    line-height: 1.25;
+  }
+.report-a-problem-toggle a {
+
+    color: #6f777b !important;
+    text-decoration: underline !important;
+  }
+    </style>
+
+  <main id="content" role="main">
+    <a class="link-back" href="javascript:history.go(-1)">Back</a>
+
+    <div class="grid-row">
+      <div class="column-two-thirds">
+
+
+                <header class="page-header">
+                <p class="page-header--sub heading-secondary"><span class="visuallyhidden">This section is </span>Before you start</p>
+                 {% if thirdparty %}
+                <h1 class="page-header--lede heading-large">Who is supporting you?</h1>
+                {% else %}
+                <h1 class="page-header--lede heading-large">Who is supporting you?</h1>
+                 {% endif %}
+            </header>
+
+<!--         <h2 class="body-text">Select all that apply</h2><br> -->
+
+
+
+        <form action="asylum-s-who" class="form" method="get">
+
+          <div class="form-group">
+            <fieldset>
+
+              <legend class="visuallyhidden">Who is supporting you as an asylum seeker?</legend>
+
+                            <div class="multiple-choice multiple-radio">
+                <input id="ukvi" name="ukvi" type="checkbox" value="true">
+                <label for="ukvi">UKVI</label>
+              </div>
+
+              <div class="multiple-choice multiple-radio">
+                <input id="charityhelp" name="charityhelp" type="checkbox" value="true">
+                <label for="charityhelp">A charity</label>
+              </div>
+
+              <div class="multiple-choice multiple-radio">
+                <input id="localauthority" name="localauthority" type="checkbox" value="true">
+                <label for="localauthority">A local authority</label>
+              </div>
+
+
+
+              <p class="form-block">or</p>
+
+              <div class="multiple-choice multiple-radio">
+                <input id="none" name="none" type="checkbox" value="true">
+                <label for="none">None of these</label>
+              </div>
+
+            </fieldset>
+
+          </div>
+
+          <div class="form-group">
+            <input class="button" type="submit" value="Next">
+          </div>
+
+        </form>
+      </div>
+      </div>
+
+
+  </main>
+
+  {% endblock %}
+

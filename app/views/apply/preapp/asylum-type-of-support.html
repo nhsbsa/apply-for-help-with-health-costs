@@ -1,0 +1,86 @@
+{% extends "layout_bsa.html" %}
+ 
+{% block page_title %}
+  Help paying for NHS Costs prototype
+{% endblock %}
+
+{% block content %}
+
+<style>
+.report-a-problem-toggle {
+     margin-top: 2em;
+    font-size: 16px;
+    line-height: 1.25;
+  }
+.report-a-problem-toggle a {
+
+    color: #6f777b !important;
+    text-decoration: underline !important;
+  }
+    </style>
+
+  <main id="content" role="main">
+    <a class="link-back" href="javascript:history.go(-1)">Back</a>
+
+    <div class="grid-row">
+      <div class="column-two-thirds">
+
+
+                <header class="page-header">
+                <p class="page-header--sub heading-secondary"><span class="visuallyhidden">This section is </span>Before you start</p>
+                 {% if thirdparty %}
+                <h1 class="page-header--lede heading-large">What type of support do you get?</h1>
+                {% else %}
+                <h1 class="page-header--lede heading-large">What type of support do you get?</h1>
+                 {% endif %}
+            </header>
+
+<!--         <h2 class="body-text">Select all that apply</h2><br> -->
+
+
+
+        <form action="asylum-support-typ" class="form" method="get">
+
+          <div class="form-group">
+            <fieldset>
+
+              <legend class="visuallyhidden">What type of support do you get?</legend>
+
+              <div class="multiple-choice multiple-radio">
+                <input id="uniCredit" name="uc" type="checkbox" value="true">
+                <label for="uniCredit">Vouchers</label>
+              </div>
+              <div class="multiple-choice multiple-radio">
+                <input id="taxcredits" name="taxcredits" type="checkbox" value="true">
+                <label for="taxcredits">Prepaid card (ASPEN card)</label>
+              </div>
+
+                            <div class="multiple-choice multiple-radio">
+                <input id="none" name="none" type="checkbox" value="true">
+                <label for="none">Food or meals only</label>
+              </div>
+
+              <div class="multiple-choice multiple-radio">
+                <input id="incomesupport" name="incomesupport" type="checkbox" value="true">
+                <label for="incomeSupport">Cash</label>
+              </div>
+
+
+
+            </fieldset>
+
+          </div>
+
+          <div class="form-group">
+            <input class="button" type="submit" value="Next">
+          </div>
+
+        </form>
+      </div>
+      </div>
+
+
+  </main>
+
+  {% endblock %}
+

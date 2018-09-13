@@ -164,11 +164,39 @@ var thisYear = 2017;
     router.get(/refugee-handler/, function (req, res) {
 
       if (req.query.refugee === 'waiting') {
-        res.redirect('full-exemption-asylum-seeker');
+        res.redirect('asylum-who-is-supporting-you');
       } else {
         res.redirect('only-incomer2');
       }
     });
+
+
+
+                // asylum seekers decision
+    router.get(/asylum-s-who/, function (req, res) {
+      if (req.query.charityhelp == 'true') 
+      {res.redirect('asylum-type-of-support');}
+      else if (req.query.localauthority == 'true') 
+      {res.redirect('asylum-type-of-support');}
+      else if (req.query.none == 'true')
+      {res.redirect('asylum-who-is-supporting-you-tell-us')}
+      else  
+      {res.redirect('full-exemption-asylum');}
+    });  
+
+
+
+
+            // asylum seekers help type
+    router.get(/asylum-support-typ/, function (req, res) {
+
+      if (req.query.incomesupport == 'true') {
+        res.redirect('asylum-working-frequency');
+      } else {
+        res.redirect('only-incomer2');
+      }
+    });
+
 
 
         // mon-dependant (release 2)
@@ -844,6 +872,22 @@ router.get(/getuc-handler/, function (req, res) {
         res.redirect('pension_pension-tally');
       }
     });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

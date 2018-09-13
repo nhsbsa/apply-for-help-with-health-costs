@@ -1,0 +1,47 @@
+ {% extends "layout_bsa.html" %}
+
+{% block page_title %}
+  Help paying for NHS Costs prototype
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+  <a href="javascript:history.go(-1)" class="link-back">Back</a>
+
+ <div class="grid-row">
+    <div class="column-two-thirds">
+
+      <header class="page-header">
+          <p class="page-header--sub heading-secondary"><span class="visuallyhidden">This section is</span>Before you start</p>
+          <h1 class="page-header--lede heading-large">Tell us who is supporting you</h1>
+        </header>
+
+<!--<p>Tell us the amount they get before tax and national insurance are taken off (gross amount).</p>
+
+      <form action="" method="" class="form">
+          <fieldset>
+            <legend class="visually-hidden">
+How much does {first name} get paid {every week}?</legend>
+
+<p class="form-hint">The amount must include pence. For example, £250.00</p>-->
+
+
+<input class="form-control form-control-3-4" id="pay" type="text" name="ni-number">
+<br><br><br>
+<p>
+          <a class="button" href="asylum-type-of-support" id="next">Next</a>
+        </p>
+
+
+</form>
+
+    </div>
+
+  </div>
+</main>
+
+
+
+{% endblock %}
+
