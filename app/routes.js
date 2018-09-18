@@ -137,9 +137,9 @@ var thisYear = 2017;
 
     router.get(/asylum-handler/, function (req, res) {
       if (applicant.partner == true && req.query.asylum === 'yes') {  
-        res.redirect('asylum-seeker-couple');
+        res.redirect('kickout_release2-no-answer');
       } else if (applicant.partner == true && req.query.asylum === 'no') {
-        res.redirect('benefits-question');
+        res.redirect('only-incomer2');
       } else if (applicant.partner == false && req.query.asylum === 'yes') {
         res.redirect('asylum-seeker-type');
       } else if (applicant.partner == false && req.query.asylum === 'no') {
@@ -164,10 +164,15 @@ var thisYear = 2017;
     router.get(/refugee-handler/, function (req, res) {
 
       if (req.query.refugee === 'waiting') {
-        res.redirect('asylum-who-is-supporting-you');
-      } else {
-        res.redirect('only-incomer2');
-      }
+      res.redirect('asylum-who-is-supporting-you');}
+      else if (req.query.refugee === 'refuse') {
+      {res.redirect('asylum-who-is-supporting-you');}
+      } 
+      else if (req.query.refugee === 'permission') {
+      {res.redirect('only-incomer2');}
+    }
+      else {
+        return false();      }
     });
 
 
