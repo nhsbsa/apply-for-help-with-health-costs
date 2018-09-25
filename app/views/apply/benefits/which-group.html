@@ -6,6 +6,23 @@
 
 {% block content %}
 
+<style>
+ .bullets-child {
+  display: block;
+  margin-left: 1em;
+ }
+ .list-child-bullet {
+  display: list-item;
+  margin-left: 1em;
+  margin-top: 0.3em;
+ }
+ strong {
+  font-weight: 700;
+ }
+
+ </style>
+
+
 <main id="content" role="main">
   <a href="javascript:history.go(-1)" class="link-back">Back</a>
 
@@ -21,6 +38,38 @@
             <h1 class="page-header--lede heading-large">Which group are you in?</h1>
              {% endif %}
             </header>
+
+
+
+             <details>
+              <summary><span class="summary">I'm not sure which group I'm in</span></summary>
+                <div class="panel panel-border-narrow" id="details-content-0" aria-hidden="false">
+
+            
+
+                  <p>The Department for Work and Pensions (DWP) will send you a decision letter to tell you which ESA group you are in.</p>
+                  <p>You will be in either the:</p>
+
+                    <ul class="list-bullet">
+                    <li><strong>work-related activity group</strong>, where you’ll have regular interviews with an adviser</li>
+                    <li><strong>support group</strong>, where you do not have interviews – you’re usually in this group if your illness or disability severely limits what you can do</li>
+                    </ul>
+                    <br>
+                    <p>If you have made a claim for ESA but haven’t been put in a group yet, you will be in the assessment phase.
+
+                      <br><br>You are usually in the assessment phase while you wait for your Work Capability Assessment.</p>
+
+                  <!-- <img class="uc-statement" src="/public/images/bsa/ESA-income-letter2.png" alt="an image showing that your type of ESA is shown towards the bottom of your letter.">
+<br>
+                       -->
+              </div>
+            </details>
+
+
+
+
+
+<br>
         
               <form action="" method="" class="form">
           <fieldset>
@@ -37,7 +86,12 @@
               <input id="4week" type="radio" name="wwpweeks" value="4week">
               <label for="4week">Support group</label>
             </div>
+              <p class="form-block">or</p>
 
+                        <div class="multiple-choice" data-target="week">
+              <input id="yes" type="radio" name="wwpweeks" value="Yes">
+              <label for="yes">I'm in the assessment phase</label>
+            </div>
 
 
 

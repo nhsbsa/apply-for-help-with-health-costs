@@ -49,8 +49,8 @@
         </div> -->
 
        
-       <div class="form-group">
-<!--           <p>If you get Universal Credit select 'No'.</p> -->
+    <!--    <div class="form-group">
+         <p>If you get Universal Credit select 'No'.</p>
           <fieldset class="inline">
             <legend class="visually-hidden">
               Do you or your partner pay a mortgage or loan on your home?
@@ -68,7 +68,32 @@
             
           </fieldset>  
           
-        </div>
+        </div> -->
+
+
+
+
+
+       <div class="form-group">
+
+            <div class="multiple-choice">
+              <input id="yes" type="radio" name="hben" value="yes">
+              <label for="yes">Yes</label>
+            </div>
+              
+            <div class="multiple-choice" data-target="4weeks">
+              <input id="no" type="radio" name="hben" value="no">
+              <label for="no">No</label>
+            </div>
+              <p class="form-block">or</p>
+
+            <div class="multiple-choice" data-target="week">
+              <input id="notyet" type="radio" name="hben" value="notyet">
+              <label for="notyey">Not yet, but I have applied</label>
+            </div>
+            <br><br>
+
+
 
         <br><br>
  <details>
@@ -77,8 +102,9 @@
      <p>If you get housing costs element as part of your Universal Credit, select 'No'.</p>
 
 
-            </div>
+            </div><br><br>
           </details>
+          <br>
           <br>
 
   <!-- submit button -->
