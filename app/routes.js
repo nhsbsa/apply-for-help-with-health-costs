@@ -258,7 +258,7 @@ var thisYear = 2017;
       if (req.query.education === 'yes') {
         res.redirect('kickout_release2-no-answer');
       } else {
-        res.redirect('preapp-summaryv3');
+        res.redirect('preapp-summaryv4-asylum');
       }
     });
     
