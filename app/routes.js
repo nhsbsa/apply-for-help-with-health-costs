@@ -66,7 +66,7 @@ var thisYear = 2017;
         //do you want to apply online ?
     router.get(/applyonline-handler/, function (req, res) {
           if (req.query.online === 'yes') {
-            res.redirect('preapp_eligibility-info-docsv3');
+            res.redirect('preapp_eligibility-info-docsv4');
       } else {
         res.redirect('preapp_eligibility-not-online');
       }
@@ -98,6 +98,102 @@ var thisYear = 2017;
         });
         }
     });
+
+
+
+    // job-handler-earnings
+    router.get(/job-handler-earnings/, function (req, res) {
+      if (req.query.partner === 'yes') {
+        applicant.partner = true;
+      } else if (req.query.partner === 'no') {
+        applicant.partner = false;
+      }
+      setPartnerText(applicant.partner);
+        if(req.query.partner === 'yes') {
+           res.render('apply/earnings/what-is-your-job', {
+                'partnerortext' : partnerOrText,
+      });
+        } else {
+             res.render('apply/earnings/personal-pension', {
+                'partnerortext' : partnerOrText,
+        });
+        }
+    });
+
+
+
+
+
+    // job-handler-another
+    router.get(/job-handler-another/, function (req, res) {
+      if (req.query.partner === 'yes') {
+        applicant.partner = true;
+      } else if (req.query.partner === 'no') {
+        applicant.partner = false;
+      }
+      setPartnerText(applicant.partner);
+        if(req.query.partner === 'yes') {
+           res.render('apply/earnings/what-is-your-job', {
+                'partnerortext' : partnerOrText,
+      });
+        } else {
+             res.render('apply/earnings/sick-note', {
+                'partnerortext' : partnerOrText,
+        });
+        }
+    });
+
+
+
+
+
+
+      // sicknotes in earnings
+            router.get(/fitnote-handler/, function (req, res) {
+      if (req.query.sicknote === 'yes') {
+        res.redirect('sick-note-date');
+      } else {
+        res.redirect('personal-pension');
+      }
+    });
+
+
+      // personal pension
+            router.get(/earnings-pp-handler/, function (req, res) {
+      if (req.query.personalpension === 'yes') {
+        res.redirect('job-personal-pension-how-often');
+      } else {
+        res.redirect('summary-state-1paye');
+      }
+    });
+
+
+                // personal pension another
+            router.get(/pp-handler/, function (req, res) {
+      if (req.query.personalpension === 'yes') {
+        res.redirect('personal-pension');
+      } else {
+        res.redirect('summary-state-1paye');
+      }
+    });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
         // perm in care home
     router.get(/confirmcarehome/, function (req, res) {
@@ -258,7 +354,7 @@ var thisYear = 2017;
       if (req.query.education === 'yes') {
         res.redirect('kickout_release2-no-answer');
       } else {
-        res.redirect('preapp-summaryv4-asylum');
+        res.redirect('preapp-summaryv5-earners');
       }
     });
     
@@ -1254,6 +1350,8 @@ var benType;
       router.get(/incometype-handler/, function (req, res) {
       if (req.query.incometype == 'pension-income') {
         res.redirect('../pension/pension_statepension');
+            } else if (req.query.incometype == 'earned-income') {
+              res.redirect('../earnings/job');
             } else if (req.query.incometype == 'no-income') {
               res.redirect('what-money');
             } else if (req.query.incometype == 'benefits-income') {

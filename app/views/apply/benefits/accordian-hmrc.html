@@ -78,6 +78,7 @@
   font-size: 19px;
   line-height: 1.25;
   color: #005ea5;
+  margin-left: 30px;
   padding-top: 1em;
 }
 
@@ -111,7 +112,7 @@
 }
 
 .accordion-with-descriptions-01 .subsection__icon {
-  position: absolute;
+  /*position: absolute;*/
   right: 15px;
   top: 15px;
   height: 16px;
@@ -120,6 +121,7 @@
   background: url("/public/images/accordion-with-descriptions/icons.svg"), linear-gradient(transparent, transparent);
   background-repeat: no-repeat;
   display: none;
+  margin-top: -23px;
 }
 
 .accordion-with-descriptions-01 .is-open .subsection__icon {
@@ -204,7 +206,7 @@
           <div class="subsection">
             <div class="js-toggle-disclosure">
                 <h2 class="subsection__title">
-                  Jobseeking benefits
+                  Out of work or low income benefits
                 </h2>
 <!--                 <p class="subsection__description">
                   This is the description for subsection 2
@@ -217,6 +219,14 @@
           <div class="multiple-choice multiple-radio">
             <input id="letter" name="contact" type="checkbox" value="letter"> <label for="letter">Jobseeker's Allowance (JSA)</label>
           </div>
+                    <div class="multiple-choice multiple-radio">
+            <input id="letter" name="contact" type="checkbox" value="letter"> <label for="letter">Universal Credit (UC)</label>
+          </div>
+
+          <div class="multiple-choice multiple-radio">
+            <input id="letter" name="contact" type="checkbox" value="letter"> <label for="letter">Working Tax Credit(WTC)</label>
+          </div>
+
         </div>
             </div>
           </div>
@@ -225,7 +235,7 @@
           <div class="subsection">
             <div class="js-toggle-disclosure">
                 <h2 class="subsection__title">
-                  Carer and disability benefits
+                  Illness and disability benefits
                 </h2>
 <!--                 <p class="subsection__description">
                   This is the description for subsection 2
@@ -258,12 +268,38 @@
         <div class="multiple-choice multiple-radio">
             <input id="letter" name="contact" type="checkbox" value="letter"> <label for="letter">Severe Disablement Allowance</label>
           </div>
-                  <div class="multiple-choice multiple-radio">
-            <input id="letter" name="contact" type="checkbox" value="letter"> <label for="letter">Carer's Allowance <span class="font-xsmall" style="display: block">This is not the care componant of DLA</span></label>
-          </div>
         </div>
             </div>
           </div>
+
+
+          <div class="subsection">
+            <div class="js-toggle-disclosure">
+                <h2 class="subsection__title">
+                  Carer benefits
+                </h2>
+<!--                 <p class="subsection__description">
+                  This is the description for subsection 2
+                </p> -->
+                <span class="subsection__icon if-no-js-hide" aria-hidden="true"></span>
+            </div>
+
+            <div class="js-toggle-disclosure-target if-js-hide">
+                      <div class="panel">
+          <div class="multiple-choice multiple-radio">
+            <input id="letter" name="contact" type="checkbox" value="letter"> <label for="letter">Carer's Allowance</label>
+          </div>
+
+        </div>
+            </div>
+          </div>
+
+
+
+
+
+
+
 
                     <div class="subsection">
             <div class="js-toggle-disclosure">

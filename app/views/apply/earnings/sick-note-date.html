@@ -1,0 +1,100 @@
+ {% extends "layout_bsa.html" %}
+
+{% block page_title %}
+  Help paying for NHS Costs prototype
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+  <a href="javascript:history.go(-1)" class="link-back">Back</a>
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+
+
+                    <header class="page-header">
+                <p class="page-header--sub heading-secondary"><span class="visuallyhidden">This section is </span>Income and other money</p>
+                 {% if thirdparty %}
+                <h1 class="page-header--lede heading-large">What date did you start sending fit notes?</h1>
+                {% else %}
+                <h1 class="page-header--lede heading-large">What date did you start sending fit notes?</h1>
+                 {% endif %}
+            </header>
+
+
+  <!-- <p class="navigation"><a class="back-to-previous">Back</a></p> -->
+
+  <form action="" method="get" class="form">
+        
+        <div class="form-group">
+          
+            <legend class="visually-hidden">
+              What date did you start sending fit notes?
+            </legend>
+
+<!--               <p style="color:grey">Select all that apply</p>
+ -->
+<!--           <div class="multiple-choice">
+              <input id="no" type="radio" name="carehome" value="no">
+              <label for="no">Over a year ago
+              </label>
+            </div> -->
+
+            <div class="form-group">
+<!--     <legend class="form-label-bold">Date of birth</legend> -->
+<!-- <p>We only use this to check if your age entitles you to any help.</p> -->
+    <p class="form-hint" id="dob-hint" style="margin-bottom: 0px">For example, 31 03 2018</p>
+
+    <div class="form-date">
+      <div class="form-group form-group-day">
+        <label class="form-label" for="dob-day">Day</label>
+        <input class="form-control" id="dobday" name="dobday" type="text" pattern="[0-9]*" min="0" max="31" aria-describedby="dob-hint">
+      </div>
+
+      <div class="form-group form-group-month">
+        <label class="form-label" for="dob-month">Month</label>
+        <input class="form-control" id="dobmonth" name="dobmonth" type="text" pattern="[0-9]*" min="0" max="12">
+      </div>
+
+      <div class="form-group form-group-year">
+        <label class="form-label" for="dob-year">Year</label>
+        <input class="form-control" id="dobyear" name="dobyear" type="text" pattern="[0-9]*" min="0" max="2016">
+      </div>
+    </div>
+  </fieldset>
+</div>
+
+           <!--  <div class="multiple-choice">
+              <input id="no" type="radio" name="carehome" value="no">
+              <label for="no" style="white-space: pre-line; line-height: 1.3">28 weeks or more
+              <span class="font-xsmall">(Before 12 October 2017)</span></label>
+            </div>
+
+            <div class="multiple-choice">
+              <input id="yes" type="radio" name="carehome" value="yes">
+              <label for="yes" style="white-space: pre-line; line-height: 1.3">Less than 28 weeks 
+              <span class="font-xsmall">(13 October 2017 or after)</span></label>
+            </div> -->
+
+
+
+
+            
+          </fieldset>  
+          
+        </div>
+        
+       <p>
+          <a class="button " href="personal-pension" id="next">Next</a>
+        </p>
+
+
+<!--     <p class="navigation"><a class="cancel" href="../lis-home">Save and come back later</a></p> -->
+
+  </form>
+    </div>
+    </div>
+</main>
+
+{% endblock %}

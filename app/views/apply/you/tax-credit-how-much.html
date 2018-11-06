@@ -1,0 +1,44 @@
+ {% extends "layout_bsa.html" %}
+
+{% block page_title %}
+  Help paying for NHS Costs prototype
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+  <a href="javascript:history.go(-1)" class="link-back">Back</a>
+
+ <div class="grid-row">
+    <div class="column-two-thirds">
+
+      <header class="page-header">
+          <p class="page-header--sub heading-secondary"><span class="visuallyhidden">This section is</span>Income and other money</p>
+          <h1 class="page-header--lede heading-large">How much Working Tax Credit do you get every {week}?</h1>
+        </header>
+
+        <p>Do not include any Child Tax Credit you get.</p>
+
+        <form action="" class="form" method="">
+
+          <fieldset>
+            <legend class="visually-hidden">How much does {first name} pay you?</legend>
+            <p class="form-hint">The amount must include pence. For example, £171.31</p>
+            <span class="heading-medium">£</span>
+            <input class="form-control form-control-1-4" id="pay" name="ni-number" type="text">
+
+            <br>
+            <br>
+            <br>
+
+            <p><a class="button" href="live_rentboard-meals" id="next">Next</a></p>
+
+          </fieldset>
+        </form>
+
+    </div>
+  </div>
+
+</main>
+{% endblock %}
+
