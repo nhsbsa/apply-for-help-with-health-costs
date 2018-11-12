@@ -414,6 +414,22 @@ router.get(/registration-third-party/, function (req, res) {
     });
 
 
+    // no income
+    router.get(/incometype-handler/, function (req, res) {
+      if (req.query.incometype == 'earned-income') {
+        res.redirect('../earnings/job');
+      } else if (req.query.incometype == 'benefits-income') {
+        res.redirect('../benefits/accordian-hmrc');
+      } else if (req.query.incometype == 'pension-income') {
+        res.redirect('../pension/pension_statepension');
+      } else if (req.query.incometype == 'maintenance-from-ex') {
+        res.redirect('../earnings/maintenance-how-often');
+      } else if (req.query.incometype == 'trust-funds') {
+      res.redirect('../benefits/trust-funds-how-often');
+      } else {
+        res.redirect('test4');
+      }
+    });
 
 
 

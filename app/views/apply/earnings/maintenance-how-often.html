@@ -1,0 +1,237 @@
+{% extends "layout_bsa.html" %}
+
+
+{% block page_title %}
+Help paying for NHS Costs prototype
+{% endblock %}
+
+{% block content %}
+
+<style>
+  .heading-no-margin {
+    margin-top: 0em;
+  }
+  .column-half {
+    border-style: solid;
+    border-width: 2px;
+    border-color: lightgray;
+    padding: 1em;
+    margin: 1em 0em 1em 1em;
+    width: 47%;
+    height: 570px;
+  }
+  @media (max-width: 641px) {
+    .column-half {
+      width: 92%;
+      margin: 1em 1em 0em 1em;
+      padding: 15px;
+      height: auto;
+    }
+  }
+  .uc-statement {
+    width: 100%;
+    display: block;
+    margin-top: 1em;
+  }
+ }
+ .bullets-child {
+  display: block;
+  margin-left: 1em;
+ }
+ .list-child-bullet {
+  display: list-item;
+  margin-left: 1em;
+  margin-top: 0.3em;
+ }
+ strong {
+  font-weight: 700;
+ }
+ .list-discription {
+  margin-bottom: 0.3em;
+ }
+ .callout--attention {
+  border: 8px solid #0072ce;
+ }
+ .callout {
+  padding: 1em 1em 0.1em 1em;
+  margin-bottom: 1.5em;
+  background-color: #fff
+ }
+ @media (min-width: 925px) {
+  .callout {
+    padding: 1em 1em 0.1em 1em;
+    margin-bottom: 1.5em
+  }
+ }
+ .callout--info {
+  background-color: #f0f4f5;
+  border: solid #768692;
+  border-width: 0 0 0 4px
+ }
+
+details{
+  margin-top: 0.5em
+}
+.opening-para{
+  margin-top: 1em;
+}
+.govuk-related-items {
+ border-top:10px solid #005ea5;
+ padding-top:5px
+}
+.govuk-related-items h2 {
+ font-weight:700;
+ text-transform:none;
+ font-size:18px;
+ line-height:1.2;
+ margin-top:0.3em;
+ margin-bottom:0.5em
+}
+@media (min-width: 641px) {
+ .govuk-related-items h2 {
+  font-size:24px;
+  line-height:1.25
+ }
+}
+.govuk-related-items .description {
+ font-weight:400;
+ text-transform:none;
+ font-size:14px;
+ line-height:1.14286
+}
+@media (min-width: 641px) {
+ .govuk-related-items .description {
+  font-size:16px;
+  line-height:1.25
+ }
+}
+.govuk-related-items ul {
+ padding:0;
+ margin:0;
+ font-weight:400;
+ text-transform:none;
+ font-size:14px;
+ line-height:1.14286;
+ list-style:none;
+ margin-bottom:1.25em
+}
+@media (min-width: 641px) {
+ .govuk-related-items ul {
+  font-size:16px;
+  line-height:1.25
+ }
+}
+.govuk-related-items ul li {
+ padding:0;
+ margin-bottom:0.75em
+}
+.govuk-related-items ul li.related-items-more {
+ font-weight:bold
+}
+.add-title-margin {
+ margin-top:15px
+}
+@media (min-width: 641px) {
+.add-title-margin {
+  margin-top:45px
+ }
+}
+
+</style>
+
+<main id="content" role="main">
+
+  <a href="javascript:history.go(-1)" class="link-back">Back</a>
+
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+
+
+      <header class="page-header">
+        <p class="page-header--sub heading-secondary"><span class="visuallyhidden">This section is </span>Income and
+          other money</p>
+        {% if thirdparty %}
+        <h1 class="page-header--lede heading-large">How often do you get maintenance payments?</h1>
+        {% else %}
+        <h1 class="page-header--lede heading-large">How often do you get maintenance payments?</h1>
+        {% endif %}
+      </header>
+
+      <form action="/apply/earnings/maintenance-how-much" method="post" class="form">
+
+        <div class="form-group">
+          <fieldset>
+            <legend class="visuallyhidden">
+              How often do you get maintenance payments?
+            </legend>
+            <br>
+
+            <div class="multiple-choice" style="line-height: 1.25; padding-bottom: 0.6em">
+              <input id="radio-1" type="radio" name="radio-group" value="every week" {{ checked("radio-group", "every week") }}>
+              <label for="radio-1" class=" block-label">
+
+                <p class="list-discription">Every week</p>
+              </label>
+            </div>
+
+            <div class="multiple-choice" style="line-height: 1.25; padding-bottom: 0.6em">
+              <input id="radio-2" type="radio" name="radio-group" value="every 2 weeks" {{ checked("radio-group", "every 2 weeks") }}>
+              <label for="radio-2" class="block-label">
+
+                <p class="list-discription">Every 2 weeks</p>
+              </label>
+            </div>
+
+            <div class="multiple-choice" style="line-height: 1.25; padding-bottom: 0.6em">
+              <input id="radio-3" type="radio" name="radio-group" value="every 4 weeks" {{ checked("radio-group", "every 4 weeks") }}>
+              <label for="radio-3" class="block-label">
+
+                <p class="list-discription">Every 4 weeks</p>
+              </label>
+            </div>
+
+            <div class="multiple-choice" style="line-height: 1.25; padding-bottom: 0.6em">
+              <input id="radio-4" type="radio" name="radio-group" value="every calendar month" {{ checked("radio-group", "every calendar month") }}>
+              <label for="radio-4" class="block-label">
+
+                <p class="list-discription">Every calendar month</p>
+              </label>
+            </div>
+
+            <div class="multiple-choice" style="line-height: 1.25; padding-bottom: 0.6em">
+              <input id="radio-5" type="radio" name="radio-group" value="every 13 weeks (quarterly)" {{ checked("radio-group", "every 13 weeks (quarterly)") }}>
+              <label for="radio-5" class="block-label">
+
+                <p class="list-discription">Every 13 weeks (quarterly)</p>
+              </label>
+            </div>
+
+            <p class="form-block">or</p>
+            <div class="multiple-choice" style="line-height: 1.25; padding-bottom: 0.6em">
+
+              <input id="radio-6" type="radio" name="radio-group" value="once a year" {{ checked("radio-group", "once a year") }}>
+              <label for="radio-6" class="block-label">
+
+                <p class="list-discription">Once a year</p>
+              </label>
+            </div>
+
+          </fieldset>
+        </div>
+
+
+
+        <br>
+
+        <button class="button">Next</button>
+
+
+      </form>
+
+    </div>
+
+  </div>
+
+</main>
+{% endblock %}

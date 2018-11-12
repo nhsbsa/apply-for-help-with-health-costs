@@ -1,0 +1,50 @@
+{% extends "layout_bsa.html" %}
+
+{% block page_title %}
+Help paying for NHS Costs prototype
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+
+  <a href="javascript:history.go(-1)" class="link-back">Back</a>
+
+  <div class="grid-row">
+
+    <div class="column-two-thirds">
+
+      <header class="page-header">
+        <p class="page-header--sub heading-secondary"><span class="visuallyhidden">This section is </span>Income and
+          other money</p>
+        {% if thirdparty %}
+        <h1 class="page-header--lede heading-large">How much do you get from trust funds {{ data['radio-group'] }}?</h1>
+        {% else %}
+        <h1 class="page-header--lede heading-large">How much do you get from trust funds {{ data['radio-group'] }}?</h1>
+        {% endif %}
+      </header>
+
+      <form action="/" method="post" class="form">
+        <div class="form-item-wrapper">
+          <fieldset>
+            <div class="form-group">
+              <label class="form-label-bold" for="email-address">
+                The amount must include pence. For example, &pound;80.40
+              </label>
+              <input type="text" id="email-address" class="form-control">
+            </div>
+          </fieldset>
+        </div>
+        <p>
+          <button class="button">Next</button>
+        </p>
+
+      </form>
+
+    </div>
+
+  </div>
+
+</main>
+
+{% endblock %}

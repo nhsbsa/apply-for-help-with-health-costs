@@ -1,5 +1,4 @@
-{% extends "layout_bsa.html" %}
- 
+ {% extends "layout_bsa.html" %}
 
 {% block page_title %}
   Help paying for NHS Costs prototype
@@ -7,43 +6,43 @@
 
 {% block content %}
 
-
 <main id="content" role="main">
-    <a href="javascript:history.go(-1)" class="link-back">Back</a>
 
   <div class="grid-row">
     <div class="column-two-thirds">
+      <a href="javascript:history.go(-1)" class="link-back">Back</a>
 
-            <header class="page-header">
+
+
+             <header class="page-header">
                 <p class="page-header--sub heading-secondary"><span class="visuallyhidden">This section is </span>Income and other money</p>
                  {% if thirdparty %}
-                <h1 class="page-header--lede heading-large">Does {{firstname}} have more than £6,000 in savings, investments and properties?</h1>
+                <h1 class="page-header--lede heading-large">Do you get tax credits?</h1>
                 {% else %}
-                <h1 class="page-header--lede heading-large">Is your annual household income £15,276 or less?</h1>
+                <h1 class="page-header--lede heading-large">Do you get tax credits?</h1>
                  {% endif %}
             </header>
 
-  <p>This is the income that is used to work out your Tax Credit payments.</p>
-    <p>You can find this on your current tax credit award notice or contact the tax credits helpline.</p>
 
+  <form action="job-handler-earnings" method="get" class="form">
 
-  <form action="savings6k-handler" method="get" class="form">
-
-
-        <div class="form-group">
+       <div class="form-group">
           
           <fieldset class="inline">
             <legend class="visually-hidden">
-                  Do you have more than £23,250 in savings, investments and properties?
+              Do you get tax credits?
             </legend>
 
+            <p>Tax credits are paid jointly to you and your partner. We’ll only ask about them once.
+</p>
+
             <div class="multiple-choice">
-              <input id="yes" type="radio" name="savings" value="yes">
+              <input id="yes" type="radio" name="partner" value="yes">
               <label for="yes">Yes</label>
             </div>
 
             <div class="multiple-choice">
-              <input id="no" type="radio" name="savings" value="no">
+              <input id="no" type="radio" name="partner" value="no">
               <label for="no">No</label>
             </div>
             
@@ -56,11 +55,15 @@
           </div>
 
       </form>
-
-
     </div>
     </div>
-
 </main>
+
 {% endblock %}
+
+
+
+
+
+
 
