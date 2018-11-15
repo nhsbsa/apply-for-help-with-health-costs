@@ -1,0 +1,66 @@
+{% extends "layout_bsa.html" %}
+
+{% block page_title %}
+Help paying for NHS Costs prototype
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+
+  <a href="javascript:history.go(-1)" class="link-back">Back</a>
+
+  <div class="grid-row">
+
+    <div class="column-two-thirds">
+
+      <header class="page-header">
+        <p class="page-header--sub heading-secondary"><span class="visuallyhidden">This section is </span>Income and
+          other money</p>
+        {% if thirdparty %}
+        <h1 class="page-header--lede heading-large">How much Working Tax Credit do you get {{
+          data['taxcreditfrequency'] }}?</h1>
+        {% else %}
+        <h1 class="page-header--lede heading-large">How much Working Tax Credit do you get {{
+          data['taxcreditfrequency'] }}?</h1>
+        {% endif %}
+      </header>
+
+      <p>Only give the amount you get from Working Tax Credit. Don't include any Child Tax Credit.</p>
+
+
+
+
+
+      <form action="" method="" class="form">
+          <fieldset>
+            <legend class="visually-hidden">
+              How much do you get from trust funds {{ data['radio-group'] }}?</legend>
+  
+  
+  
+            <p class="form-hint">The amount must include pence. For example, &pound;72.20</p>
+            <span class="heading-medium">£</span> <input class="form-control form-control-1-4" style="margin-top: 10px"
+              id="pay" type="text" name="ni-number">
+            <br><br><br>
+            <p>
+              <a class="button" href="accordian-hmrc" id="next">Next</a>
+            </p>
+  
+            <!-- 
+  
+      <p class="navigation"><a class="cancel" href="../lis-home">Save and come back later</a></p> -->
+  
+  
+        </form>
+  
+
+
+
+    </div>
+
+  </div>
+
+</main>
+
+{% endblock %}

@@ -17,7 +17,7 @@
              {% if thirdparty %}
             <h1 class="page-header--lede heading-large">How much is {firstname}'s State Pension {every month}?</h1>
             {% else %}
-            <h1 class="page-header--lede heading-large">How much do you pay into your personal pension every {dynamic}</h1>
+            <h1 class="page-header--lede heading-large">How much do you pay into your personal pension {{ data['radio-group'] }}?</h1>
              {% endif %}
             </header>
 

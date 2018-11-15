@@ -1,0 +1,84 @@
+ {% extends "layout_bsa.html" %}
+
+{% block page_title %}
+  Help paying for NHS Costs prototype
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+      <a href="javascript:history.go(-1)" class="link-back">Back</a>
+
+
+
+             <header class="page-header">
+                <p class="page-header--sub heading-secondary"><span class="visuallyhidden">This section is </span>Income and other money</p>
+                 {% if thirdparty %}
+                <h1 class="page-header--lede heading-large">Was your take-home pay for your last Universal Credit period &pound;435 or less?</h1>
+                {% else %}
+                <h1 class="page-header--lede heading-large">Was your take-home pay for your last Universal Credit period &pound;435 or less?</h1>
+                 {% endif %}
+            </header>
+       <p>Take-home pay is used to work out your Universal Credit payments.</p>
+       <p>If you don't work, your take-home pay will be &pound;0.</p>
+       <details>
+
+          <summary><span class="summary">Where to find your take-home pay</span></summary>
+          <div class="panel panel-border-narrow" id="details-content-0" aria-hidden="false">
+        
+              <p>To find your take-home pay::</p>
+              <ul class="list-bullet">
+              <li>sign in to your <a target="_blank" href="https://www.gov.uk/sign-in-universal-credit">universal credit account</a></li>
+              <li>view your latest statement</li>
+              <li>your take-home pay will be detailed towards the bottom</li>
+              </ul>
+              <br>
+
+              <p><img src="/public/images/bsa/take-home-pay.jpg" /></p>
+                </div>
+                    </details> 
+                    <br>
+
+  <form action="universalcredit-435-439-handler" method="get" class="form">
+
+       <div class="form-group">
+          
+          <fieldset class="inline">
+            <legend class="visually-hidden">
+                Was your take-home pay for your last Universal Credit period &pound;435 or less?
+            </legend>
+
+            <div class="multiple-choice">
+              <input id="yes" type="radio" name="universalcredittakehomepay" value="yes">
+              <label for="yes">Yes</label>
+            </div>
+
+            <div class="multiple-choice">
+              <input id="no" type="radio" name="universalcredittakehomepay" value="no">
+              <label for="no">No</label>
+            </div>
+            
+          </fieldset>  
+          
+        </div>
+        
+          <div class="form-group">
+            <input class="button" type="submit"  value="Next">
+          </div>
+
+      </form>
+    </div>
+    </div>
+</main>
+
+{% endblock %}
+
+
+
+
+
+
+

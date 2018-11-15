@@ -152,70 +152,37 @@ details{
         <p class="page-header--sub heading-secondary"><span class="visuallyhidden">This section is </span>Income and
           other money</p>
         {% if thirdparty %}
-        <h1 class="page-header--lede heading-large">How often do you pay into your personal pension?</h1>
+        <h1 class="page-header--lede heading-large">How often is your Working Tax Credit paid?</h1>
         {% else %}
-        <h1 class="page-header--lede heading-large">How often do you pay into your personal pension?</h1>
+        <h1 class="page-header--lede heading-large">How often is your Working Tax Credit paid?</h1>
         {% endif %}
       </header>
 
-      <form action="personal-pension-how-much" method="post" class="form">
+      <form action="WTCFrequency-handler" method="get" class="form">
 
         <div class="form-group">
           <fieldset>
             <legend class="visuallyhidden">
-              How often do you pay into your personal pension?
+                How often is your Working Tax Credit paid?
             </legend>
             <br>
 
             <div class="multiple-choice" style="line-height: 1.25; padding-bottom: 0.6em">
-              <input id="radio-1" type="radio" name="radio-group" value="every week" {{ checked("radio-group", "every week") }}>
-              <label for="radio-1" class=" block-label">
+              <input id="radio-1" type="radio" name="taxcreditfrequency" value="every week" {{ checked("taxcreditfrequency", "every week") }}>
+              <label for="radio-1" class="block-label">
 
                 <p class="list-discription">Every week</p>
               </label>
             </div>
 
             <div class="multiple-choice" style="line-height: 1.25; padding-bottom: 0.6em">
-              <input id="radio-2" type="radio" name="radio-group" value="every 2 weeks" {{ checked("radio-group", "every 2 weeks") }}>
+              <input id="radio-2" type="radio" name="taxcreditfrequency" value="every 4 weeks" {{ checked("taxcreditfrequency", "every 4 weeks") }}>
               <label for="radio-2" class="block-label">
-
-                <p class="list-discription">Every 2 weeks</p>
-              </label>
-            </div>
-
-            <div class="multiple-choice" style="line-height: 1.25; padding-bottom: 0.6em">
-              <input id="radio-3" type="radio" name="radio-group" value="every 4 weeks" {{ checked("radio-group", "every 4 weeks") }}>
-              <label for="radio-3" class="block-label">
 
                 <p class="list-discription">Every 4 weeks</p>
               </label>
             </div>
 
-            <div class="multiple-choice" style="line-height: 1.25; padding-bottom: 0.6em">
-              <input id="radio-4" type="radio" name="radio-group" value="every calendar month" {{ checked("radio-group", "every calendar month") }}>
-              <label for="radio-4" class="block-label">
-
-                <p class="list-discription">Every calendar month</p>
-              </label>
-            </div>
-
-            <div class="multiple-choice" style="line-height: 1.25; padding-bottom: 0.6em">
-              <input id="radio-5" type="radio" name="radio-group" value="every 13 weeks (quarterly)" {{ checked("radio-group", "every 13 weeks (quarterly)") }}>
-              <label for="radio-5" class="block-label">
-
-                <p class="list-discription">Every 13 weeks (quarterly)</p>
-              </label>
-            </div>
-
-            <p class="form-block">or</p>
-            <div class="multiple-choice" style="line-height: 1.25; padding-bottom: 0.6em">
-
-              <input id="radio-6" type="radio" name="radio-group" value="once a year" {{ checked("radio-group", "once a year") }}>
-              <label for="radio-6" class="block-label">
-
-                <p class="list-discription">Once a year</p>
-              </label>
-            </div>
 
           </fieldset>
         </div>

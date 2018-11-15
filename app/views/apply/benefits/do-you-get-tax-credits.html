@@ -1,4 +1,4 @@
-{% extends "layout_bsa.html" %}
+ {% extends "layout_bsa.html" %}
 
 {% block page_title %}
   Help paying for NHS Costs prototype
@@ -12,31 +12,34 @@
     <div class="column-two-thirds">
       <a href="javascript:history.go(-1)" class="link-back">Back</a>
 
-          <header class="page-header">
-            <p class="page-header--sub heading-secondary"><span class="visuallyhidden">This section is </span>Before you start</p>
-             {% if thirdparty %}
-            <h1 class="page-header--lede heading-large">Does {{firstname}} have a paid job?</h1>
-            {% else %}
-            <h1 class="page-header--lede heading-large">Do you have a paid job?</h1>
-             {% endif %}
-            </header>
 
-  <form action="preappjob-handler" method="get" class="form">
+
+             <header class="page-header">
+                <p class="page-header--sub heading-secondary"><span class="visuallyhidden">This section is </span>Income and other money</p>
+                 {% if thirdparty %}
+                <h1 class="page-header--lede heading-large">Do you get tax credits?</h1>
+                {% else %}
+                <h1 class="page-header--lede heading-large">Do you get tax credits?</h1>
+                 {% endif %}
+            </header>
+<p>Tax credits are paid jointly to you and your partner. We'll only ask about them once.</p>
+
+  <form action="taxcredit-handler" method="get" class="form">
 
        <div class="form-group">
           
           <fieldset class="inline">
             <legend class="visually-hidden">
-                Do you have a paid job?
+                Do you get tax credits?
             </legend>
 
             <div class="multiple-choice">
-              <input id="yes" type="radio" name="job" value="yes">
+              <input id="yes" type="radio" name="gettaxcredits" value="yes">
               <label for="yes">Yes</label>
             </div>
 
             <div class="multiple-choice">
-              <input id="no" type="radio" name="job" value="no">
+              <input id="no" type="radio" name="gettaxcredits" value="no">
               <label for="no">No</label>
             </div>
             

@@ -1,4 +1,4 @@
- {% extends "layout_bsa.html" %}
+{% extends "layout_bsa.html" %}
 
 {% block page_title %}
   Help paying for NHS Costs prototype
@@ -152,6 +152,11 @@
     padding: 0.78947em 0.78947em 0.78947em 0em;
     margin-bottom: 0.78947em;
   }
+.link{
+  margin-left: 30px;
+  border: none;
+  cursor: pointer;
+}
 </style>
 
 <main class="accordion-with-descriptions-01" id="content" role="main" tabindex="-1">
@@ -211,8 +216,14 @@
 <!--                 <p class="subsection__description">
                   This is the description for subsection 2
                 </p> -->
+                 
+                
+               
                 <span class="subsection__icon if-no-js-hide" aria-hidden="true"></span>
+                <br/>
+                <a href="#" data-text-swap="Hide" class="link">Show</a>
             </div>
+           
 
             <div class="js-toggle-disclosure-target if-js-hide">
                       <div class="panel">
@@ -241,6 +252,8 @@
                   This is the description for subsection 2
                 </p> -->
                 <span class="subsection__icon if-no-js-hide" aria-hidden="true"></span>
+                <br/>
+                <a href="#" data-text-swap="Hide" class="link">Show</a>
             </div>
 
             <div class="js-toggle-disclosure-target if-js-hide">
@@ -282,6 +295,8 @@
                   This is the description for subsection 2
                 </p> -->
                 <span class="subsection__icon if-no-js-hide" aria-hidden="true"></span>
+                <br/>
+                <a href="#" data-text-swap="Hide" class="link">Show</a>
             </div>
 
             <div class="js-toggle-disclosure-target if-js-hide">
@@ -310,6 +325,8 @@
                   This is the description for subsection 2
                 </p> -->
                 <span class="subsection__icon if-no-js-hide" aria-hidden="true"></span>
+                <br/>
+                <a href="#" data-text-swap="Hide" class="link">Show</a>
             </div>
 
             <div class="js-toggle-disclosure-target if-js-hide">
@@ -336,6 +353,8 @@
                 This is the description for subsection 3
               </p> -->
               <span class="subsection__icon if-no-js-hide" aria-hidden="true"></span>
+              <br/>
+                <a href="#" data-text-swap="Hide" class="link">Show</a>
             </div>
             <div class="js-toggle-disclosure-target if-js-hide">
                       <div class="panel">
@@ -366,6 +385,8 @@
                 This is the description for subsection 3
               </p> -->
               <span class="subsection__icon if-no-js-hide" aria-hidden="true"></span>
+              <br/>
+                <a href="#" data-text-swap="Hide" class="link">Show</a>
             </div>
 
             <div class="js-toggle-disclosure-target if-js-hide">
@@ -433,6 +454,33 @@
   <script src="/public/javascripts/start-modules.js"></script>
 
   <script>if (typeof window.GOVUK === 'undefined') document.body.className = document.body.className.replace('js-enabled', '');</script>
+
+<script type="text/javascript">
+
+  var button = $("a");
+  button.text(button.data("text-swap"));
+
+  var button = $("a");
+  button.data("text-original", button.text());
+  button.text(button.data("text-swap"));
+
+  var button = $("a");
+  button.on("click", function() {
+  button.data("text-original", button.text());
+  button.text(button.data("text-swap"));
+  });
+
+  $("a").on("click", function() {
+    var el = $(this);
+    if (el.text() == el.data("text-swap")) {
+      el.text(el.data("text-original"));
+    } else {
+      el.data("text-original", el.text());
+      el.text(el.data("text-swap"));
+    }
+  });
+
+</script>
 
 {% endblock %}
 

@@ -55,6 +55,7 @@ applicant.contactValue = '3 street, Town, NE1 246';
 applicant.email = null;
 applicant.address = null;
 applicant.partner = null;
+applicant.taxcreditsType = null;
 
 
 var thisYear = 2017;
@@ -79,7 +80,7 @@ var thisYear = 2017;
   });
 });
 
-
+/*
     // partner handler v2
     router.get(/testing-handler/, function (req, res) {
       if (req.query.partner === 'yes') {
@@ -88,16 +89,18 @@ var thisYear = 2017;
         applicant.partner = false;
       }
       setPartnerText(applicant.partner);
-        if(req.query.partner === 'yes') {
-           res.render('apply/preapp/asylum-seeker', {
-                'partnerortext' : partnerOrText,
-      });
-        } else {
-             res.render('apply/preapp/asylum-seeker', {
-                'partnerortext' : partnerOrText,
+      if (req.query.partner === 'yes') {
+        res.render('apply/preapp/job', {
+          'partnerortext': partnerOrText,
         });
-        }
+      } else {
+        res.render('apply/preapp/job', {
+          'partnerortext': partnerOrText,
+        });
+      }
     });
+
+*/
 
 
 
@@ -123,7 +126,7 @@ var thisYear = 2017;
 
 
 
-
+/* 
     // job-handler-another
     router.get(/job-handler-another/, function (req, res) {
       if (req.query.partner === 'yes') {
@@ -143,19 +146,12 @@ var thisYear = 2017;
         }
     });
 
+*/
 
 
 
 
 
-      // sicknotes in earnings
-            router.get(/fitnote-handler/, function (req, res) {
-      if (req.query.sicknote === 'yes') {
-        res.redirect('sick-note-date');
-      } else {
-        res.redirect('personal-pension');
-      }
-    });
 
 
       // personal pension
@@ -168,10 +164,10 @@ var thisYear = 2017;
     });
 
 
-                // personal pension another
+      // personal pension another
             router.get(/pp-handler/, function (req, res) {
       if (req.query.personalpension === 'yes') {
-        res.redirect('personal-pension');
+        res.redirect('job-personal-pension-how-often');
       } else {
         res.redirect('summary-state-1paye');
       }
@@ -230,7 +226,7 @@ var thisYear = 2017;
     });
 
 
-
+/*
     router.get(/asylum-handler/, function (req, res) {
       if (applicant.partner == true && req.query.asylum === 'yes') {  
         res.redirect('kickout_release2-no-answer');
@@ -244,6 +240,22 @@ var thisYear = 2017;
         return false();
       }
   });
+
+  */
+
+  router.get(/asylum-handler/, function (req, res) {
+    if (applicant.partner == true && req.query.asylum === 'yes') {  
+      res.redirect('kickout_release2-no-answer');
+    } else if (applicant.partner == true && req.query.asylum === 'no') {
+      res.redirect('only-incomer2');
+    } else if (applicant.partner == false && req.query.asylum === 'yes') {
+      res.redirect('asylum-seeker-type');
+    } else if (applicant.partner == false && req.query.asylum === 'no') {
+      res.redirect('only-incomer2');
+    } else {
+      return false();
+    }
+});
 
 
     //         // asylum seekers
@@ -412,26 +424,6 @@ router.get(/registration-third-party/, function (req, res) {
         res.redirect('../../live/living-summary-care');
       }
     });
-
-
-    // no income
-    router.get(/incometype-handler/, function (req, res) {
-      if (req.query.incometype == 'earned-income') {
-        res.redirect('../earnings/job');
-      } else if (req.query.incometype == 'benefits-income') {
-        res.redirect('../benefits/accordian-hmrc');
-      } else if (req.query.incometype == 'pension-income') {
-        res.redirect('../pension/pension_statepension');
-      } else if (req.query.incometype == 'maintenance-from-ex') {
-        res.redirect('../earnings/maintenance-how-often');
-      } else if (req.query.incometype == 'trust-funds') {
-      res.redirect('../benefits/trust-funds-how-often');
-      } else {
-        res.redirect('test4');
-      }
-    });
-
-
 
 
 
@@ -898,6 +890,7 @@ router.get(/telephone-c-handler/, function (req, res) {
       }
     });
 
+    /* 
      router.get(/job-handler/, function (req, res) {
       if (req.query.job == 'yes') {
         res.redirect('kickout_release2-no-answer');
@@ -905,6 +898,7 @@ router.get(/telephone-c-handler/, function (req, res) {
         res.redirect('full-exemption-uc');
       }
     });
+    */
 
 
 router.get(/benefits-handler/, function (req, res) {
@@ -1362,20 +1356,7 @@ var benType;
       }
     });
 
-    // no income
-      router.get(/incometype-handler/, function (req, res) {
-      if (req.query.incometype == 'pension-income') {
-        res.redirect('../pension/pension_statepension');
-            } else if (req.query.incometype == 'earned-income') {
-              res.redirect('../earnings/job');
-            } else if (req.query.incometype == 'no-income') {
-              res.redirect('what-money');
-            } else if (req.query.incometype == 'benefits-income') {
-              res.redirect('../benefits/accordian-hmrc');
-            } else {
-              res.redirect('test4');
-      }
-    });
+
 
                               // non dep
       router.get(/deptype-handler/, function (req, res) {
@@ -1418,4 +1399,174 @@ var benType;
 
 module.exports = router;
 
+// ************************
+// Before you start - 13th November 2018
+// ************************
 
+router.get(/testing-handler/, function (req, res) {
+  if (req.query.job == 'yes') {
+    res.redirect('job');
+  } else {
+    res.redirect('job');
+  }
+});
+
+router.get(/preappjob-handler/, function (req, res) {
+  if (req.query.job === 'yes') {
+    res.redirect('payslips');
+  } else if (req.query.job === 'no') {
+    res.redirect('asylum-seeker');
+  }
+});
+
+router.get(/payslips-handler/, function (req, res) {
+  if (req.query.payslips === 'yes') {
+    res.redirect('asylum-seeker');
+  } else if (req.query.payslips === 'no') {
+    res.redirect('kickout-no-payslips');
+  }
+});
+
+router.get(/asylumnew-handler/, function (req, res) {
+  if (req.query.asylum === 'yes') {
+    res.redirect('asylum-seeker-type');
+  } else if (req.query.asylum === 'no') {
+    res.redirect('only-incomer2');
+  }
+});
+
+router.get(/job-handler-another/, function (req, res) {
+  if (req.query.partner === 'yes') {
+    res.redirect('what-is-your-job');
+  } else if (req.query.partner === 'no') {
+    res.redirect('email-payslips');
+  }
+});
+
+router.get(/fitnote-handler/, function (req, res) {
+  if (req.query.sicknote === 'yes') {
+    res.redirect('sick-note-date');
+  } else if (req.query.sicknote === 'no'){
+    res.redirect('job-another');
+  }
+});
+
+
+
+
+
+// ************************
+// EARNINGS - 13th November 2018
+// ************************
+
+// Earnings > Income Type
+
+router.get(/incometype-handler/, function (req, res) {
+  if (req.query.incometype == 'earned-income') {
+    res.redirect('../earnings/job');
+  } else if (req.query.incometype == 'benefits-income') {
+    res.redirect('../benefits/do-you-get-universal-credit');
+  } else if (req.query.incometype == 'pension-income') {
+    res.redirect('../pension/pension_statepension');
+  } else if (req.query.incometype == 'maintenance-from-ex') {
+    res.redirect('../earnings/maintenance-how-often');
+  } else if (req.query.incometype == 'trust-funds') {
+  res.redirect('../benefits/trust-funds-how-often');
+  } else if (req.query.incometype == 'no-income') {
+    res.redirect('../earnings/what-money');
+  }
+});
+
+        // Earnings > Benefits > Universal Credit
+        router.get(/universalcredit-handler/, function (req, res) {
+          if (req.query.universalcredit === 'yes') {
+            res.redirect('../benefits/universal-credit-any-of-these');
+          } else if (req.query.universalcredit === 'no') {
+            res.redirect('../benefits/do-you-get-tax-credits');
+          } else {
+            res.redirect('test4');
+          }
+        });
+
+                // Earnings > Benefits > Universal Credit > Universal Credit (any of these?)
+                router.get(/universalcredit-any-handler/, function (req, res) {
+                  if (req.query.universalcreditanyofthese === 'yes') {
+                    res.redirect('../benefits/universal-credit-take-home-pay-935');
+                  } else if (req.query.universalcreditanyofthese === 'no') {
+                    res.redirect('../benefits/universal-credit-take-home-pay-435');
+                  }
+                });
+
+                          // Earnings > Benefits > Universal Credit > Universal Credit (any of these?) > Universal Credit (435 / 439)
+                          router.get(/universalcredit-435-439-handler/, function (req, res) {
+                            if (req.query.universalcredittakehomepay === 'yes') {
+                              res.redirect('../benefits/benefits-universal-credit-summary'); // RESULTS
+                            } else if (req.query.universalcredittakehomepay === 'no') {
+                              res.redirect('../benefits/accordian-hmrc'); // CHONGA
+                            }
+                          });
+
+                // Earnings > Benefits > Tax Credits (any of these?)
+                router.get(/taxcredit-handler/, function (req, res) {
+                  if (req.query.gettaxcredits === 'yes') {
+                    res.redirect('../benefits/tax-credits-type');
+                  } else if (req.query.gettaxcredits === 'no') {
+                    res.redirect('../benefits/accordian-hmrc'); // CHONGA
+                  }
+                });
+
+
+                          // Earnings > Benefits > Tax Credits (any of these?) > Tax Credit Type
+                          router.get(/TCT-handler/, function (req, res) {
+                            if (req.query.taxcredittype === 'WTCandCTC') {
+                              applicant.taxcreditsType = 'WTCandCTC';
+                              res.redirect('../benefits/household-income-15276');
+                            } else if (req.query.taxcredittype === 'WTCandDisability') {
+                              applicant.taxcreditsType = 'WTCandDisability';
+                              res.redirect('../benefits/household-income-15276');
+                            } else if (req.query.taxcredittype === 'CTC') {
+                              applicant.taxcreditsType = 'CTC';
+                              res.redirect('../benefits/household-income-15276');
+                            } else if (req.query.taxcredittype === 'WTC') {
+                              applicant.taxcreditsType = 'WTC';
+                              res.redirect('../benefits/accordian-hmrc'); // CHONGA
+                            } 
+                          });
+
+                // Earnings > Benefits > Tax Credits (any of these?) > Tax Credit Type > Less than £15,276
+                router.get(/householdincome-handler/, function (req, res) {
+                  if (req.query.householdincome === 'yes') {
+                    res.redirect('../benefits/benefits-tax-credit-summary');
+                  } else if (req.query.householdincome === 'no' && applicant.taxcreditsType === 'WTCandCTC') {
+                    res.redirect('../benefits/working-tax-credit-how-often'); 
+                  } else if (req.query.householdincome === 'no' && applicant.taxcreditsType === 'WTCandDisability') {
+                    res.redirect('../benefits/working-tax-credit-how-often');
+                  } else if (req.query.householdincome === 'no' && applicant.taxcreditsType === 'CTC') {
+                    res.redirect('../benefits/accordian-hmrc'); // CHONGA
+                  }
+                });
+
+                                // Earnings > Benefits > Tax Credits (any of these?) > Tax Credit Type > Less than £15,276 > Frequency
+                                router.get(/WTCFrequency-handler/, function (req, res) {
+                                  if (req.query.taxcreditfrequency === 'every week') {
+                                    res.redirect('../benefits/working-tax-credit-how-much');
+                                  } else if (req.query.taxcreditfrequency === 'every 4 weeks') {
+                                    res.redirect('../benefits/working-tax-credit-how-much');
+                                  }
+                                });
+                
+        // Earnings > Nil Income
+        router.get(/nilincome-handler/, function (req, res) {
+
+          if (req.query.incometype1 == 'friendsfamily') {
+            res.redirect('../benefits/benefits-summary');
+          } else if (req.query.incometype1 == 'savings') {
+            res.redirect('../benefits/benefits-summary');
+          } else if (req.query.incometype1 == 'donations') {
+            res.redirect('../benefits/benefits-summary');
+          } else if (req.query.incometype1 == 'none') {
+            res.redirect('../benefits/benefits-summary');
+          } else {
+            res.redirect('../benefits/benefits-summary');
+          }
+        });

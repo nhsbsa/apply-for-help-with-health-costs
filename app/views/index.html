@@ -1,64 +1,212 @@
 {% extends "layout_bsa.html" %}
-
 {% block page_title %}
-  Help paying for NHS Costs prototype
-{% endblock %}
-
+NHS Prescription Payment exemption{% endblock %}
 {% block content %}
-
+<style>
+   .versions-prod:before {
+   content: "PRIVATE BETA";
+   position: absolute;
+   top: 0;
+   left: 0;
+   padding: 0.2105263158em 0.7894736842em 0.2105263158em 0.7894736842em;
+   font-family: Arial, sans-serif;
+   font-weight: 400;
+   text-transform: none;
+   font-size: 16px;
+   line-height: 1.25;
+   background: #2360AC;
+   color: white;
+   }
+   .versions-prod {
+   position: relative;
+   overflow: hidden;
+   border: 3px solid #2360AC;
+   margin-top: 30px;
+   margin-bottom: 35px;
+   padding-top: 15px;
+   padding-right: 15px;
+   padding-bottom: 15px;
+   padding-left: 15px;
+   }
+   @media (min-width: 641px) {
+   .versions-prod {
+   padding-top: 50px;
+   padding-right: 30px;
+   padding-bottom: 20px;
+   padding-left: 30px;
+   }
+   }
+   .versions:before {
+   content: "RESEARCH";
+   position: absolute;
+   top: 0;
+   left: 0;
+   padding: 0.2105263158em 0.7894736842em 0.2105263158em 0.7894736842em;
+   font-family: Arial, sans-serif;
+   font-weight: 400;
+   text-transform: none;
+   font-size: 16px;
+   line-height: 1.25;
+   background: #bfc1c3;
+   color: white;
+   }
+   .versions-alpha {
+   position: relative;
+   overflow: hidden;
+   border: 3px solid #D53880;
+   margin-top: 30px;
+   margin-bottom: 35px;
+   padding-top: 15px;
+   padding-right: 15px;
+   padding-bottom: 15px;
+   padding-left: 15px;
+   }
+   @media (min-width: 641px) {
+   .versions-alpha {
+   padding-top: 50px;
+   padding-right: 30px;
+   padding-bottom: 20px;
+   padding-left: 30px;
+   }
+   }
+   .versions-alpha:before {
+   content: "ALPHA";
+   position: absolute;
+   top: 0;
+   left: 0;
+   padding: 0.2105263158em 0.7894736842em 0.2105263158em 0.7894736842em;
+   font-family: Arial, sans-serif;
+   font-weight: 400;
+   text-transform: none;
+   font-size: 16px;
+   line-height: 1.25;
+   background: #D53880;
+   color: white;
+   }
+   .versions {
+   position: relative;
+   overflow: hidden;
+   border: 3px solid #bfc1c3;
+   margin-top: 30px;
+   margin-bottom: 35px;
+   padding-top: 15px;
+   padding-right: 15px;
+   padding-bottom: 15px;
+   padding-left: 15px;
+   }
+   @media (min-width: 641px) {
+   .versions {
+   padding-top: 50px;
+   padding-right: 30px;
+   padding-bottom: 20px;
+   padding-left: 30px;
+   }
+   }
+</style>
 <main id="content" role="main">
-
-  <div class="grid-row">
-  <div class="column-two-thirds">
-
-        <h1 class="heading-xlarge">
-          <span class="heading-secondary">Prototype</span>
-          Apply for help to pay NHS costs
-        </h1>
-
-
-
-  <h2 class="heading-medium">Our purpose</h2>
-        <p class="lede">To reduce health inequality caused by having limited means.</p>
-
-  <table>
-    <thead>
-      <tr>
-        <th width="25%">Link</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a href="apply/devbaseline/">DevBaseline</a></td>
-
-        <td>For all agreed tickets</td>
-      </tr>
-<!--       <tr>
-        <td><a href="apply/design-sprints/">Design iterations</a></td>
-
-        <td>All design iterations of the service</td>
-      </tr> -->
-
-        <tr>
-        <td><a href="apply/design-sprints/research/index-research">User research</a></td>
-
-        <td>For latest usability testing</td>
-      </tr>
-
-    </tbody>
-  </table>
-
+   <div style="background-color: #DEE0E2; padding: 25px 25px 1px 25px; margin-top:15px;">
+      <div class="notice" style="margin-bottom:25px;">
+         <i class="icon icon-important">
+         <span class="visually-hidden">Warning</span>
+         </i>
+         <strong class="bold-small">
+         This page should be ignored for development purposes.
+         </strong>
+      </div>
+   </div>
+   <br>
+   <div class="grid-row">
+      <div class="column-two-thirds">
+         <header class="page-header">
+            <p class="page-header--sub heading-secondary">Prototype</p>
+            <h1 class="page-header--lede heading-xlarge" style="margin-top:0">Apply for help to pay NHS costs</h1>
+         </header>
+      </div>
+   </div>
+   <details>
+      <summary><span class="summary">About this prototype</span></summary>
+      <br>
+      <div class="panel panel-border-narrow">
+         <h3 class="heading-small">Who is this service for?</h3>
+         <p>The general public</p>
+         <h3 class="heading-small">What is it for?</h3>
+         <p>To reduce health inequality caused by having limited means.
+         </p>
+         <h3 class="heading-small">Current phase</h3>
+         <p>Private Beta</p>
+         <h3 class="heading-small">Contact the project team</h3>
+         <a href="">stephen.hill9@nhs.net</a>
+      </div>
+   </details>
+   <details>
+      <summary><span class="summary">Sharing this prototype</span></summary>
+      <br>
+      <div class="panel panel-border-narrow">
+         <div class="grid-row">
+            <div class="column-third">
+               <h3 class="heading-small" style="float:left; margin-top:10px">To give others access to this prototype:</h3>
+            </div>
+            <div class="column-two-thirds">
+               <table>
+                  <tbody>
+                     <tr>
+                        <td style="width:40%">Username</td>
+                        <td>helen</td>
+                     </tr>
+                     <tr>
+                        <td style="text-align: left;">Password</td>
+                        <td>bsapassword</td>
+                     </tr>
+                  </tbody>
+               </table>
+            </div>
+         </div>
+      </div>
+   </details>
+   <hr>
+   <details>
+    <summary><span class="summary">Sprint 49</span></summary>
+    <br>
+    <div class="panel panel-border-narrow">
+      <div class="grid-row">
+        <div class="column-third">
+           <h2 class="heading-medium">Experimental</h2>
+        </div>
+        <div class="column-two-thirds">
+           <div class="versions-prod">
+              <h3 class="heading-medium" style="margin-top:0;">Earnings: Single Applicants (PAYE, Benefits, Pensions, Maintenance Payments & Trust Funds)</h3>
+              <h4 class="heading-small">Hypothesis</h4>
+              <p style="background: #DEE0E2; padding: 10px; margin-top:15px;">"Lorem ipsum dolor sit amet, consectetur adipiscing elit."</p>
+              <h4 class="heading-small">What we changed:</h4>
+              <ul class="list list-bullet">
+                  <li>Added in PAYE, Benefits, Pensions, Maintenance Payments & Trust Funds user journeys for single applicants.</li>
+                  <li>Added in the submission of pay slips via email.</li>
+                </ul>
+                <h4 class="heading-small">What we plan to test:</h4>
+                <ul class="list list-bullet">
+                    <li>Whether single applicants can successfully navigate through the workflow and supply evidence of their income.</li>
+                    <li>Whether assessors are satisfied that the following journey gives them all of the required information for single applicants.</li>
+                  </ul> 
+              <h4 class="heading-small">What we found:</h4>
+              <ul class="list list-bullet">
+                  <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
+                  <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
+                </ul> 
+                <hr>
+              <h4 class="heading-small">Known Issues</h4>
+              <ul class="list list-bullet">
+                  <li>No error messages in the prototype.</li>
+                  <li>Uses dummy data on summary screens.</li>
+                </ul>
+              <a href="apply/benefits/income-info"><input class="button" type="submit" value="Specific Journey"></a><br><br>
+              <a href="apply/start"><input class="button" type="submit" value="End-to-End Service"></a><br><br>
+           </div>
+        </div>
+     </div>
   
-  </div>
+    </div>
+ </details>
 
-</div>
 
-  
-  <h2 class="heading-medium">Alpha Prototypes</h2>
-<h3 class="heading-small"> <a href="http://nhslis.herokuapp.com/">Sprint 8</a></h3>
 </main>
-
 {% endblock %}
-
-

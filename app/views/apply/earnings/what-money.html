@@ -1,0 +1,69 @@
+{% extends "layout_bsa.html" %}
+
+{% block page_title %}
+Help paying for NHS Costs prototype
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+  <a href="javascript:history.go(-1)" class="link-back">Back</a>
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+
+
+      <header class="page-header">
+        <p class="page-header--sub heading-secondary"><span class="visuallyhidden">This section is </span>Income and
+          other money</p>
+        {% if thirdparty %}
+        <h1 class="page-header--lede heading-large">How are you paying for things at the moment?</h1>
+        {% else %}
+        <h1 class="page-header--lede heading-large">How are you paying for things at the moment?</h1>
+        {% endif %}
+      </header>
+
+        <p style="color:grey">Select all that apply</p>
+
+        <form class="form" action="nilincome-handler" method="get">
+
+            <fieldset class="form-group">
+                <legend class="visually-hidden">
+                    How are you paying for things at the moment?
+                </legend>
+                <div class="multiple-choice multiple-radio">
+                    <input id="friendsfamily" name="incometype1" value="friendsfamily" type="checkbox">
+                    <label for="friendsfamily">Money from friends or family</label>
+                </div>
+                <div class="multiple-choice multiple-radio">
+                    <input id="savings" name="incometype1" value="savings" type="checkbox">
+                    <label for="savings">Savings</label>
+                </div>
+        
+                <div class="multiple-choice multiple-radio">
+                    <input id="donations" name="incometype1" value="donations" type="checkbox">
+                    <label for="donations">Donations from charity or voluntary organisations</label>
+                </div>
+        
+                <p class="form-block">or</p>
+        
+                <div class="multiple-choice multiple-radio">
+                    <input id="none" name="incometype1" value="none" type="checkbox">
+                    <label for="none">None of these</label>
+                </div>
+        
+            </fieldset>
+        
+            <div class="form-group">
+                <input class="button" type="submit" value="Next">
+            </div>
+
+        </form>
+
+        <!--  <p class="navigation"><a class="cancel" href="../lis-check-list">Save and come back later</a></p> -->
+
+    </div>
+  </div>
+</main>
+
+{% endblock %}

@@ -1,0 +1,39 @@
+ {% extends "layout_bsa.html" %}
+
+{% block page_title %}
+  Help paying for NHS Costs prototype
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+  <a href="javascript:history.go(-1)" class="link-back">Back</a>
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+
+              <header class="page-header">
+                <p class="page-header--sub heading-secondary"><span class="visuallyhidden">This section is </span>Income and other details</p>
+                 {% if thirdparty %}
+                <h1 class="page-header--lede heading-large">How are you supporting yourself?</h1>
+                {% else %}
+                <h1 class="page-header--lede heading-large">How are you supporting yourself?</h1>
+                 {% endif %}
+            </header>
+
+  <!--  <p>Use your full name. For example, Susan not Sue.<br> -->
+  <form action="name-handler" method="get" class="form">
+<div class="form-group">
+  <label class="form-label" for="textarea">Tell us how you live</label>
+  <textarea class="form-control form-control-3-4" name="textarea" id="textarea" rows="5"></textarea>
+</div>
+
+<a class="button" href="job-paid-how-often" id="next">Next</a>
+
+   <!--  <p class="navigation"><a class="cancel" href="../lis-check-list">Save and come back later</a></p> -->
+  </form>
+    </div>
+    </div>
+</main>
+
+{% endblock %}
